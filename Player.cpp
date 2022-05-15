@@ -4,13 +4,14 @@
 using namespace std;
 
 Player::Player() {
-    
+    name = "";
+    required_player_salary = 0;
 }
 
 Player::Player(string _name, float salary)
 {
-    _name = name;
-    salary = required_player_salary;
+    name = _name;
+    required_player_salary = salary;
 }
 
 void Player::print_info() {
