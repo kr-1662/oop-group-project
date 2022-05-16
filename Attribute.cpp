@@ -3,8 +3,9 @@
 
 using namespace std;
 
-Attribute::Attribute(int _rating)
-{
+Attribute::Attribute() : rating(0){}
+
+Attribute::Attribute(int _rating){
     if (_rating >= 0 && _rating <= 10) {
         rating = _rating;
     }
@@ -15,10 +16,8 @@ Attribute::Attribute(int _rating)
     }
 }
 
-int Attribute::get_rating() {
+int Attribute::get_rating(){
     return rating;
 }
 
-Attribute::~Attribute()
-{
-}
+Attribute::~Attribute(){}
