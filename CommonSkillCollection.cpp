@@ -12,7 +12,7 @@ void CommonSkillCollection:: read_in_Striker(string CommonSkillCollection.txt){
        double passing; 
        double ball_control;
        double dribbling; 
-       P_File >> passing >> ball_control >> dribbling;
+       PS_File >> passing >> ball_control >> dribbling;
        
     }
 }

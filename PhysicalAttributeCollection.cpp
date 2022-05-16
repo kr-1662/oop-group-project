@@ -5,15 +5,15 @@ PhysicalAttributeCollection::PhysicalAttributeCollection(){
 }
 
 void PhysicalAttributeCollection:: read_in_Striker(string PhysicalAttributeCollection.txt){
-    ifstream P_File("PhysicalAttributeCollection.txt");
+    ifstream PA_File("PhysicalAttributeCollection.txt");
     for(int i=0;i<32;i++)
     {
-       double stamina; 
+       double stamina;
        double speed;
-       double strength; 
+       double strength;
        double agility;
-       P_File >> stamina >> speed >> strength >> agility;
-       
+       PA_File >> stamina >> speed >> strength >> agility;
+
     }
 }
 
@@ -22,10 +22,10 @@ void PhysicalAttributeCollection:: print_Player_attribute(){
     {
         player_Physicalattribute[i].get_stamina() << " " << player_Physicalattribute[i].get_speed()<< " " << player_Physicalattribute[i].get_strength()<<" "<< player_Physicalattribute[i].get_agility()<< endl;
     }
-    
+
 }
- 
- PhysicalAttributeCollection:: total_physical_attribute_rating() {
+
+int PhysicalAttributeCollection:: total_physical_attribute_rating() {
     double sum = stamina.get_rating() + speed.get_rating() + strength.get_rating() + agility.get_rating();
     double avg = sum/4;
     return a;
