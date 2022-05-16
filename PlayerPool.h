@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
-#ifndef J_H_
-#define J_H_
+#ifndef PlayerPool_H_
+#define PlayerPool_H_
 using namespace std;
 
 class PlayerPool{
