@@ -84,7 +84,7 @@ void print Defender(){
         defender_selections[i].get_D_name() << "-" defender_selections[i].get_tackling() << " " << defender_selections[i].get_marking() << " " << defender_selections[i].get_D_Cost() << endl;
     }
 }
-void print Striker(){
+void print GoalKeeper(){
     for(int i=0;i<8;i++)
     {
         goalkeeper_selections[i].get_G_name() << "-" goalkeeper_selections[i].get_distributing() << " " << goalkeeper_selections[i].get_diving() << " " << goalkeeper_selections[i].get_handling() << " " << goalkeeper_selections[i].get_G_Cost() << endl;

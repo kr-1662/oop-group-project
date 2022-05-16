@@ -5,6 +5,8 @@
 
 class CommonSkillCollection: public Attribute
 {
+    private:
+    Attribute* player_CommonSkillCollection;
 public:
     Attribute passing;
     Attribute ball_control;
