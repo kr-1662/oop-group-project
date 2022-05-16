@@ -28,7 +28,7 @@ void PhysicalAttributeCollection:: print_Player_attribute(){
 int PhysicalAttributeCollection:: total_physical_attribute_rating() {
     double sum = stamina.get_rating() + speed.get_rating() + strength.get_rating() + agility.get_rating();
     double avg = sum/4;
-    return a;
+    return avg;
 }
 
 PhysicalAttributeCollection::~PhysicalAttributeCollection()
