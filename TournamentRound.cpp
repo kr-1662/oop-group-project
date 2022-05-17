@@ -8,12 +8,13 @@ using namespace std;
     teams_in_tournament(_teams_in_tournament), user_team_name(_user_team_name), fixture_team_indexes(_fixture_team_indexes), num_of_matches(_num_of_matches) {
         winning_teams = new Team[num_of_matches];
         football_matches = new Match[num_of_matches];
+        football_match_results = new MatchResult[num_of_matches];
     }
 
     Team* TournamentRound::play_tournament_round(){
         for (int i = 0; i < num_of_matches; i++) {
             football_matches[i].set_teams(teams_in_tournament[fixture_team_indexes[2*i]], teams_in_tournament[fixture_team_indexes[2*i+1]]);
-            football_matches[i].play_football_match();
+            football_match_results[i] = football_matches[i].play_football_match();
             winning_teams[i] = football_matches[i].get_winning_team();
         }
         return winning_teams;
@@ -21,7 +22,7 @@ using namespace std;
 
     void TournamentRound::print_results(){
         for (int i = 0; i < num_of_matches; i++) {
-            football_matches[i].get_match_result().print_result();
+            football_match_results[i].print_result();
         }
     }
 

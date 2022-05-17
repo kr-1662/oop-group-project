@@ -1,5 +1,6 @@
-#include "FootballLeague.h"
+#include "Tournament.h"
 #include "PlayerPool.h"
+#include "FootballLeague.h"
 
 #include <iostream>
 #include <string>
@@ -15,8 +16,10 @@ int main() {
 
     FootballLeague premier_league;
     premier_league.read_in_teams(selectable_players);
-    premier_league.get_team("Arsenal").print_player_names();
-    premier_league.set_user_team_name("Arsenal");
+    premier_league.set_user_team_name("Liverpool");
+
+    Tournament premier_tournament(premier_league.get_teams(),premier_league.get_user_team_name());
+    premier_tournament.tournament_sim();
 
     return 0;
 }

@@ -4,15 +4,18 @@
 #include <string>
 
 #include "FootballLeague.h"
+#include "TournamentRound.h"
+#include "PlayerPool.h"
 
 using namespace std; 
 
 class Tournament{
     private: 
-    FootballLeague football_league;
+    Team* football_league_teams;
+    string user_team_name;
 
     public:
-    Tournament(FootballLeague _football_league);
+    Tournament(Team* _football_league_teams, string user_team_name);
     void tournament_sim();
     ~Tournament();
 };

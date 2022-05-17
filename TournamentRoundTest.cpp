@@ -1,5 +1,6 @@
-#include "FootballLeague.h"
+#include "TournamentRound.h"
 #include "PlayerPool.h"
+#include "FootballLeague.h"
 
 #include <iostream>
 #include <string>
@@ -15,8 +16,14 @@ int main() {
 
     FootballLeague premier_league;
     premier_league.read_in_teams(selectable_players);
-    premier_league.get_team("Arsenal").print_player_names();
-    premier_league.set_user_team_name("Arsenal");
+
+    int fixture_indexes[8] = {0,4,1,7,2,6,5,3};
+    string user_team_name = "Liverpool";
+
+    TournamentRound quarterfinals(premier_league.get_teams(), user_team_name, fixture_indexes, 4);
+    Team* remaining_teams = quarterfinals.play_tournament_round();
+    quarterfinals.print_results();
+    cout << quarterfinals.is_still_in_tournament() << endl;
 
     return 0;
 }

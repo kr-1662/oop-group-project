@@ -285,42 +285,6 @@ void PlayerPool::print_possible_player_selections(string position){
     }
 }
 
-<<<<<<< HEAD
-Player* PlayerPool::select_player(string position, string name){
-    if (position == "Striker"){
-        for (int i = 0; i < 8; i++){
-            if (striker_selections[i].get_name() == name){
-                Player* chosen_player = new Striker;
-                *chosen_player = striker_selections[i];
-                return chosen_player; 
-            }
-        }
-    }else if(position == "Midfielder"){
-        for (int i = 0; i < 8; i++){
-            if (midfielder_selections[i].get_name() == name){
-                Player* chosen_player = new Midfielder;
-                *chosen_player = midfielder_selections[i];
-                return chosen_player; 
-            }
-        }
-    }else if(position == "Defender"){
-        for (int i = 0; i < 8; i++){
-            if (defender_selections[i].get_name() == name){
-                Player* chosen_player = new Defender;
-                *chosen_player = defender_selections[i];
-                return chosen_player; 
-            }
-        }
-    }else{
-        for (int i = 0; i < 8; i++){
-            if (goalkeeper_selections[i].get_name() == name){
-                Player* chosen_player = new Goalkeeper;
-                *chosen_player = goalkeeper_selections[i];
-                return chosen_player; 
-            }
-        }   
-    }
-=======
 Striker PlayerPool::select_striker(string name){
     for (int i = 0; i < 8; i++){
         if (striker_selections[i].get_name() == name){
@@ -351,7 +315,6 @@ Goalkeeper PlayerPool::select_goalkeeper(string name){
             return goalkeeper_selections[i];
         }
     }     
->>>>>>> da500724d5b898d111706278c925f08cd0a89101
 }
 
 Striker* PlayerPool::get_striker_selections(){return striker_selections;}

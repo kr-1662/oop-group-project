@@ -24,7 +24,7 @@ void FootballLeague::read_in_teams(PlayerPool available_players){
 }
 
 
-void FootballLeague::set_user_team(string team_name){
+void FootballLeague::set_user_team_name(string team_name){
     user_selected_team_name = team_name;
     for (int i = 0; i < 8; i++){
         if (football_league_teams[i].get_team_name() == team_name){
@@ -42,6 +42,8 @@ Team FootballLeague::get_team(string team_name){
 }
 
 Team* FootballLeague::get_teams(){return football_league_teams;}
+
+string FootballLeague::get_user_team_name(){return user_selected_team_name;}
 
 FootballLeague::~FootballLeague(){
     delete [] football_league_teams;
