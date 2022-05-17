@@ -40,4 +40,40 @@ public:
     ~CommonSkillCollection();
 
 
+    player_Physicalattribute = new Attributes[32];
+}
 
+void PhysicalAttributeCollection:: read_in_Striker(string PhysicalAttributeCollection.txt){
+    ifstream PA_File("PhysicalAttributeCollection.txt");
+    for(int i=0;i<32;i++)
+    {
+       double stamina;
+       double speed;
+       double strength;
+       double agility;
+       PA_File >> stamina >> speed >> strength >> agility;
+
+    }
+}
+
+void PhysicalAttributeCollection:: print_Player_attribute(){
+    for(int i=0;i<32;i++)
+    {
+        player_Physicalattribute[i].get_stamina() << " " << player_Physicalattribute[i].get_speed()<< " " << player_Physicalattribute[i].get_strength()<<" "<< player_Physicalattribute[i].get_agility()<< endl;
+    }
+
+}
+
+class PhysicalAttributeCollection: public Attribute
+{
+    private:
+    Attribute* player_Physicalattribute;
+    public:
+    Attribute stamina;
+    Attribute speed;
+    Attribute strength;
+    Attribute agility;
+    PhysicalAttributeCollection();
+    void print_Player_attribute();
+    int total_physical_attribute_rating();
+    ~PhysicalAttributeCollection();
