@@ -1,4 +1,4 @@
-#include <TeamCreation.h>
+#include "TeamCreation.h"
 #include <iostream>
 
 using namespace std;
@@ -8,25 +8,25 @@ TeamCreation::TeamCreation() {
 }
 
 void TeamCreation::create_user_team() {
-    string input;
-    string input2;
-    string input3;
-    string player_name;
-    string player_position;
+    string input = " ";
+    string input2 = " ";
+    string input3 = " ";
+    string player_name = " ";
+    string player_position = " ";
     string team[4] = {" ", " ", " ", " "};
+    int team_number;
     float Salary_requirement = 2000000;
     cout << "Enter Y to begin the premier league simulation:";
     cin >> input;
 
     if (input == "Y") {
         for (int i = 0; i < 8; i++) {
-            football_league.football_league_teams[i].set_team_name(football_league.football_league_teams[i].get_team_name());
-            cout << football_league.football_league_teams[i].get_team_name() << endl;
+            cout << football_league.get_teams()[i] << endl;
         }
         cout << "Select a team you wish to manage:";
         cin >> team_number;
-        if (team_number == team_index) {
-            cout << "You have selected " << football_league.football_league_teams[team_number].get_team_name() << endl;
+        if (team_number == football_league.get_user_team_index()) {
+            cout << "You have selected " << football_league.get_teams()[team_number].get_team_name() << endl;
             for (int i = 0; i < 4; i++) {
                 cout << "Enter the position of the player: ";
                 cin >> player_position;
@@ -42,13 +42,13 @@ void TeamCreation::create_user_team() {
                     }
                 }
                 selectable_players.select_player(player_position, player_name);
-                football_league.football_league_teams[i].add_player(i);
+                football_league.get_teams()[i].add_player(i);
                 cout << "You have added " << player_name << " to your team" << endl;
                 for (int i = 0; i < 4; i++) {
-                    team.push(player_name) " ";
+                    team[i] = player_name;
                 }
                 cout << "Your remaining Salary is: " << Salary_requirement << endl;
-                Salary_requirement -= _salary;
+                Salary_requirement -= selectable_players(player_name);
                 cout << "Enter Y to finish choosing the team: ";
                 cin >> input3;
                 if (input3 == "Y") {
@@ -69,7 +69,7 @@ void TeamCreation::create_user_team() {
             for (int i = 0; i < 4; i++) {
                 team[i] = " ";
             }
-            cout << "You have selected " << football_league.football_league_teams[team_number].get_team_name() << endl;
+            cout << "You have selected " << football_league.get_teams()[team_number].get_team_name() << endl;
             for (int i = 0; i < 4; i++) {
                 cout << "Enter the position of the player: ";
                 cin >> player_position;
@@ -85,10 +85,10 @@ void TeamCreation::create_user_team() {
                     }
                 }
                 selectable_players.select_player(player_position, player_name);
-                football_league.football_league_teams[i].add_player(i);
+                football_league.get_teams()[i].add_player(i);
                 cout << "You have added " << player_name << " to your team" << endl;
                 for (int i = 0; i < 4; i++) {
-                    team.push(player_name) " ";
+                    team[i] = " ";
                 }
                 cout << "Your remaining Salary is: " << Salary_requirement << endl;
                 Salary_requirement -= _salary;
@@ -103,6 +103,8 @@ void TeamCreation::create_user_team() {
     else {
             cout << "You have successfully created your team" << endl;
         }
+    }
+
 }
 
 TeamCreation::~TeamCreation() {

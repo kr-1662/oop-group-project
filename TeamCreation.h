@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 
-#include "Playerpool.h"
+#include "PlayerPool.h"
 #include "FootballLeague.h"
+#include "Player.h"
 
 using namespace std; 
 
