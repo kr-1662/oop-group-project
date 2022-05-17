@@ -27,7 +27,7 @@ using namespace std;
 
     bool TournamentRound::is_still_in_tournament(){
         for (int i = 0; i < num_of_matches; i++) {
-            if (winning_teams[i].get_football_team_name() == user_team_name) {
+            if (winning_teams[i].get_team_name() == user_team_name) {
                 return true;
             }
         }

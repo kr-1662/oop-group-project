@@ -6,6 +6,7 @@
 #include "Defender.h"
 #include "Midfielder.h"
 #include "Goalkeeper.h"
+#include "Team.h"
 #include <iostream>
 #include <string>
 
@@ -18,6 +19,7 @@ class PlayerPool{
     Midfielder* midfielder_selections; 
     Defender* defender_selections;
     Goalkeeper* goalkeeper_selections;
+    Team *user_team;
     
     public:
     PlayerPool();
@@ -27,6 +29,7 @@ class PlayerPool{
     void read_in_goalkeeper(string filename);
     void print_possible_player_selections(string position);
     Player* select_player(string position, string name);
+    Team *user_team();
     ~PlayerPool();
 };
 #endif
