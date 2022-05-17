@@ -3,6 +3,7 @@
 
 #include "Attribute.h"
 
+<<<<<<< HEAD
 class PhysicalAttributeCollection {
     private:
         Attribute stamina;
@@ -23,6 +24,21 @@ class PhysicalAttributeCollection {
         Attribute get_agility();
         int total_physical_attribute_rating();
         ~PhysicalAttributeCollection();
+=======
+class PhysicalAttributeCollection: public Attribute
+{
+    private:
+    Attribute* player_Physicalattribute;
+    public:
+    Attribute stamina;
+    Attribute speed;
+    Attribute strength;
+    Attribute agility;
+    PhysicalAttributeCollection();
+    void print_Player_attribute();
+    int total_physical_attribute_rating();
+    ~PhysicalAttributeCollection();
+>>>>>>> 01f1c0802e6ce1b162534316288651458f54ff73
 };
 
 
