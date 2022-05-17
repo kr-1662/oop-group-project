@@ -41,7 +41,13 @@ Team FootballLeague::get_team(string team_name){
     }
 }
 
-Team* FootballLeague::get_teams(){return football_league_teams;}
+Team* FootballLeague::get_teams(){
+    return football_league_teams;
+}
+
+int FootballLeague::get_user_team_index() {
+    return user_team_index;
+}
 
 FootballLeague::~FootballLeague(){
     delete [] football_league_teams;
