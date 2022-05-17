@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Tournament::Tournament(FootballLeague _football_league) : FootballLeague(_football_league) {}
+Tournament::Tournament(FootballLeague _football_league) : football_league(_football_league) {}
 
 void Tournament::tournament_sim(){
     char progression_input = 'N'; // Stores input when user asked to progress simulation.

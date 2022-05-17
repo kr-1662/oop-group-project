@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+#include "FootballLeague.h"
+
 using namespace std; 
 
 class Tournament{

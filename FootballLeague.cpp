@@ -4,7 +4,7 @@
 FootballLeague::FootballLeague(){
     football_league_teams = new Team[8];
     user_selected_team_name = "";
-    team_index = 0;
+    user_team_index = 0;
 }
 
 void FootballLeague::read_in_teams(PlayerPool available_players){
@@ -28,7 +28,7 @@ void FootballLeague::set_user_team(string team_name){
     user_selected_team_name = team_name;
     for (int i = 0; i < 8; i++){
         if (football_league_teams[i].get_team_name() == team_name){
-            team_index = i;
+            user_team_index = i;
         }
     }
 }
@@ -40,6 +40,8 @@ Team FootballLeague::get_team(string team_name){
         }
     }
 }
+
+Team* FootballLeague::get_teams(){return football_league_teams;}
 
 FootballLeague::~FootballLeague(){
     delete [] football_league_teams;
