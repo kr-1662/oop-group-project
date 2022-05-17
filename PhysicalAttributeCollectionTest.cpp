@@ -42,6 +42,5 @@ int main() {
             cout << "Error in test: " << test_num << endl;
         }
     }
-    
     return 0;
 }

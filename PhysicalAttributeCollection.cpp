@@ -27,9 +27,7 @@ Attribute PhysicalAttributeCollection::get_strength(){return strength;}
 Attribute PhysicalAttributeCollection::get_agility(){return agility;}
 
 int PhysicalAttributeCollection:: total_physical_attribute_rating() {
-    double sum = stamina.get_rating() + speed.get_rating() + strength.get_rating() + agility.get_rating();
-    double avg = sum/4;
-    return avg;
+    return stamina.get_rating() + speed.get_rating() + strength.get_rating() + agility.get_rating();
 }
 
 PhysicalAttributeCollection::~PhysicalAttributeCollection(){}

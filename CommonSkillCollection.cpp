@@ -25,8 +25,7 @@ void CommonSkillCollection::set_ball_control(Attribute _ball_control){ball_contr
 void CommonSkillCollection::set_dribbling(Attribute _dribbling){dribbling = _dribbling;}
 
 int CommonSkillCollection::total_skill_rating(){
-    int sum = passing.get_rating() + ball_control.get_rating() + dribbling.get_rating();
-    return sum;
+     return passing.get_rating() + ball_control.get_rating() + dribbling.get_rating(); 
 }
 
 CommonSkillCollection::~CommonSkillCollection(){}

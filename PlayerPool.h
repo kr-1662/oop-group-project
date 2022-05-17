@@ -1,21 +1,32 @@
-#include<iostream>
-#include<string>
 #ifndef PlayerPool_H_
 #define PlayerPool_H_
+
+#include "Player.h"
+#include "Striker.h"
+#include "Defender.h"
+#include "Midfielder.h"
+#include "Goalkeeper.h"
+#include <iostream>
+#include <string>
+
 using namespace std;
+
 
 class PlayerPool{
     private:
-    Player* striker_selections;
-    Player* midfielder_selections; 
-    Player* defender_selections;
-    Player* goalkeeper_selections;
+    Striker* striker_selections;
+    Midfielder* midfielder_selections; 
+    Defender* defender_selections;
+    Goalkeeper* goalkeeper_selections;
     
     public:
     PlayerPool();
-    void read_in_players(string filename);
+    void read_in_striker(string filename);
+    void read_in_midfielder(string filename);
+    void read_in_defender(string filename);
+    void read_in_goalkeeper(string filename);
     void print_possible_player_selections(string position);
-    Player* select_player(string name);
+    Player* select_player(string position, string name);
     ~PlayerPool();
 };
 #endif
