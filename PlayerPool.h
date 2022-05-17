@@ -25,8 +25,15 @@ class PlayerPool{
     void read_in_midfielder(string filename);
     void read_in_defender(string filename);
     void read_in_goalkeeper(string filename);
+    Striker* get_striker_selections();
+    Midfielder* get_midfielder_selections();
+    Defender* get_defender_selections();
+    Goalkeeper* get_goalkeeper_selections();
     void print_possible_player_selections(string position);
-    Player* select_player(string position, string name);
+    Striker select_striker(string name);
+    Midfielder select_midfielder(string name);
+    Defender select_defender(string name);
+    Goalkeeper select_goalkeeper(string name);
     ~PlayerPool();
 };
 #endif
