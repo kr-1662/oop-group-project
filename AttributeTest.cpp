@@ -1,6 +1,5 @@
 #include "Attribute.h"
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -11,6 +10,10 @@ int main() {
         if (attribute.get_rating() != 0) {
             cout << "Error in test number: " << test_num << endl;
         }
+        attribute.set_rating(4);
+        if (attribute.get_rating() != 4) {
+            cout << "Error in test number: " << test_num << endl;
+        }
     }
 
     {
@@ -19,12 +22,20 @@ int main() {
         if (attribute.get_rating() != 4) {
             cout << "Error in test number: " << test_num << endl;
         }
+        attribute.set_rating(-1);
+        if (attribute.get_rating() != 0) {
+            cout << "Error in test number: " << test_num << endl;
+        }
     }
 
     {
         int test_num = 3;
         Attribute attribute(1);
         if (attribute.get_rating() != 1) {
+            cout << "Error in test number: " << test_num << endl;
+        }
+        attribute.set_rating(122);
+        if (attribute.get_rating() != 0) {
             cout << "Error in test number: " << test_num << endl;
         }
     }
