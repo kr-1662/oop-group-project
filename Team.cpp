@@ -5,7 +5,6 @@ using namespace std;
 
 Team::Team() {
     football_team_name = "";
-    team_members = NULL;
     team_salary_requirement = 0;
 }
 
@@ -13,16 +12,37 @@ string Team::get_team_name() {
     return football_team_name;
 }
 
-Team::Team(string _football_team_name, Player * _team_members, float team_salary_requirement) {
-    football_team_name = _football_team_name;
-    team_members = _team_members;
-    this->team_salary_requirement = team_salary_requirement;
+void Team::reset_team_members(){
+    striker.set_name("");
+    midfielder.set_name("");
+    defender.set_name("");
+    goalkeeper.set_name("");
 }
 
-Player * Team::get_team_members() {
-    return team_members;
+void Team::set_team_name(string new_team_name){
+    football_team_name = new_team_name;
 }
 
-Team::~Team() {
+Striker Team::get_team_striker(){return striker;}
 
+Midfielder Team::get_team_midfielder(){return midfielder;}
+
+Defender Team::get_team_defender(){return defender;}
+
+Goalkeeper Team::get_team_goalkeeper(){return goalkeeper;}
+
+void Team::set_team_members(Striker _striker, Midfielder _midfielder, Defender _defender, Goalkeeper _goalkeeper){
+    striker = _striker;
+    midfielder = _midfielder;
+    defender = _defender;
+    goalkeeper = _goalkeeper;
 }
+
+void Team::print_player_names(){
+    cout << striker.get_name() << endl;
+    cout << midfielder.get_name() << endl;
+    cout << defender.get_name() << endl;
+    cout << goalkeeper.get_name() << endl;
+}
+
+Team::~Team(){}
