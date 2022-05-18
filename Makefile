@@ -1,4 +1,4 @@
-OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o
+OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o TeamCreator.o
 
 all: SimGame
 
@@ -100,6 +100,12 @@ TournamentRoundTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollec
 
 Tournament.o: Tournament.h Tournament.cpp
 	g++ -c Tournament.cpp -o Tournament.o
+
+TeamCreator.o: TeamCreator.h TeamCreator.cpp
+	g++ -c TeamCreator.cpp -o TeamCreator.o
+
+TeamCreatorTest: $(OBJ)
+	g++ $(OBJ) TeamCreatorTest.cpp -o TeamCreatorTest.out
 
 TournamentTest: $(OBJ)
 	g++ $(OBJ) TournamentTest.cpp -o TournamentTest.out

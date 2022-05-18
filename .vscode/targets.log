@@ -8,15 +8,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed May 18 10:21:56 2022
+# Make data base, printed on Wed May 18 10:32:18 2022
 
 # Variables
 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# makefile (from `Makefile', line 1)
+OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o TeamCreator.o
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -115,6 +116,7 @@ MAKEFLAGS = Rrqp
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+ 
 # environment
 XPC_SERVICE_NAME = application.com.microsoft.VSCode.3624003.3624009
 # environment
@@ -145,9 +147,8 @@ MAKELEVEL := 0
 LANG = C
 # environment
 VSCODE_PID = 36149
- 
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=1/91=1%
+# Load=67/1024=7%, Rehash=0, Collisions=4/94=4%
 
 # Pattern-specific Variable Values
 
@@ -155,9 +156,9 @@ VSCODE_PID = 36149
 
 # Directories
 
-# . (device 16777232, inode 3979170): 80 files, no impossibilities.
+# . (device 16777232, inode 3979170): 88 files, no impossibilities.
 
-# 80 files, no impossibilities in 1 directories.
+# 88 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -169,8 +170,16 @@ PlayerPoolTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 55):
+#  commands to execute (from `Makefile', line 57):
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o PlayerPoolTest.cpp -o PlayerPoolTest.out
+	
+
+TournamentRound.o: TournamentRound.h TournamentRound.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 96):
+	g++ -c TournamentRound.cpp -o TournamentRound.o
 	
 
 CommonSkillCollection.o: CommonSkillCollection.h CommonSkillCollection.cpp
@@ -180,12 +189,48 @@ CommonSkillCollection.o: CommonSkillCollection.h CommonSkillCollection.cpp
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 13):
+#  commands to execute (from `Makefile', line 15):
 	g++ -c CommonSkillCollection.cpp -o CommonSkillCollection.o
 	
 
+FixturePrinterTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FixturePrinter.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 93):
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FixturePrinter.o FixturePrinterTest.cpp -o FixturePrinterTest.out
+	
+
+FixturePrinter.o: FixturePrinter.h FixturePrinter.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 90):
+	g++ -c FixturePrinter.cpp -o FixturePrinter.o
+	
+
+# Not a target:
+MatchResult.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 PhysicalAttributeCollection.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FootballLeague.o: FootballLeague.h FootballLeague.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 66):
+	g++ -c FootballLeague.cpp -o FootballLeague.o
+	
+
+# Not a target:
+FixturePrinter.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -209,7 +254,7 @@ PlayerPool.o: PlayerPool.h PlayerPool.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 52):
+#  commands to execute (from `Makefile', line 54):
 	g++ -c PlayerPool.cpp -o PlayerPool.o
 	
 
@@ -217,7 +262,7 @@ AttributeTest: Attribute.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 10):
+#  commands to execute (from `Makefile', line 12):
 	g++ Attribute.o AttributeTest.cpp -o AttributeTest.out
 	
 
@@ -227,13 +272,27 @@ Striker.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+TeamPlayerBattle.o: TeamPlayerBattle.h TeamPlayerBattle.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 72):
+	g++ -c TeamPlayerBattle.cpp -o TeamPlayerBattle.o
+	
+
 StrikerTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 49):
+#  commands to execute (from `Makefile', line 51):
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o StrikerTest.cpp -o StrikerTest.out
 	
+
+# Not a target:
+TeamCreator.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -241,11 +300,18 @@ StrikerTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o P
 #  Modification time never checked.
 #  File has not been updated.
 
+MatchTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 87):
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o MatchTest.cpp -o MatchTest.out
+	
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-05-17 15:14:34
+#  Last modified 2022-05-18 10:30:01
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -264,8 +330,22 @@ Attribute.o: Attribute.h Attribute.cpp
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 7):
+#  commands to execute (from `Makefile', line 9):
 	g++ -c Attribute.cpp -o Attribute.o
+	
+
+# Not a target:
+TeamCreator.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Tournament.o: Tournament.h Tournament.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 102):
+	g++ -c Tournament.cpp -o Tournament.o
 	
 
 # Not a target:
@@ -274,12 +354,35 @@ Goalkeeper.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+TournamentTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o TeamCreator.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 111):
+	g++ $(OBJ) TournamentTest.cpp -o TournamentTest.out
+	
+
 PhysicalAttributeCollectionTest: Attribute.o PhysicalAttributeCollection.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 22):
+#  commands to execute (from `Makefile', line 24):
+ 
 	g++ Attribute.o PhysicalAttributeCollection.o PhysicalAttributeCollectionTest.cpp -o PhysicalAttributeCollectionTest.out
+	
+
+# Not a target:
+Team.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Match.o: Match.h Match.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 84):
+	g++ -c Match.cpp -o Match.o
 	
 
 # Not a target:
@@ -287,6 +390,14 @@ Defender.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+MatchResult.o: MatchResult.h MatchResult.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 78):
+	g++ -c MatchResult.cpp -o MatchResult.o
+	
 
 # Not a target:
 Midfielder.h:
@@ -298,12 +409,32 @@ PhysicalAttributeCollection.o: PhysicalAttributeCollection.h PhysicalAttributeCo
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 19):
+#  commands to execute (from `Makefile', line 21):
 	g++ -c PhysicalAttributeCollection.cpp -o PhysicalAttributeCollection.o
 	
 
 # Not a target:
 Player.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Team.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+MatchResultTest: MatchResult.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 81):
+	g++ MatchResult.o MatchResultTest.cpp -o MatchResultTest.out
+	
+
+# Not a target:
+TournamentRound.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -318,7 +449,19 @@ CommonSkillCollection.h:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+FixturePrinter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Defender.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FootballLeague.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -331,6 +474,12 @@ Midfielder.cpp:
 
 # Not a target:
 Player.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+TournamentRound.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -354,12 +503,18 @@ Striker.o: Striker.h Striker.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 46):
+#  commands to execute (from `Makefile', line 48):
 	g++ -c Striker.cpp -o Striker.o
 	
 
 # Not a target:
 PlayerPool.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FootballLeague.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -374,9 +529,37 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 58):
-	rm -f *.out SimGame
+#  commands to execute (from `Makefile', line 114):
+	rm -f *.out *.o SimGame
 	
+
+# Not a target:
+TeamPlayerBattle.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+TeamCreatorTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o TeamCreator.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 108):
+	g++ $(OBJ) TeamCreatorTest.cpp -o TeamCreatorTest.out
+	
+
+TeamCreator.o: TeamCreator.h TeamCreator.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 105):
+	g++ -c TeamCreator.cpp -o TeamCreator.o
+	
+
+# Not a target:
+TeamPlayerBattle.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 SimGame: Attribute.o CommonSkillCollection.o
 #  Implicit rule search has not been done.
@@ -399,11 +582,28 @@ SimGame: Attribute.o CommonSkillCollection.o
 # automatic
 # ^ := Attribute.o CommonSkillCollection.o
 # automatic
+ 
 # ? := Attribute.o CommonSkillCollection.o
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
-#  commands to execute (from `Makefile', line 4):
+#  commands to execute (from `Makefile', line 6):
 	g++ Attribute.o CommonSkillCollection.o -o SimGame
+	
+
+TeamPlayerBattleTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 75):
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o TeamPlayerBattleTest.cpp -o TeamPlayerBattleTest.out
+	
+
+TournamentRoundTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 99):
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o TournamentRoundTest.cpp -o TournamentRoundTest.out
 	
 
 # Not a target:
@@ -415,12 +615,11 @@ Attribute.h:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
- 
 GoalkeeperTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Goalkeeper.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 37):
+#  commands to execute (from `Makefile', line 39):
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Goalkeeper.o GoalkeeperTest.cpp -o GoalkeeperTest.out
 	
 
@@ -428,9 +627,31 @@ Goalkeeper.o: Goalkeeper.h Goalkeeper.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 34):
+#  commands to execute (from `Makefile', line 36):
 	g++ -c Goalkeeper.cpp -o Goalkeeper.o
 	
+
+TeamTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o TeamTest.cpp -o TeamTest.out
+	
+
+FootballLeagueTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 69):
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FootballLeagueTest.cpp -o FootballLeagueTest.out
+	
+
+# Not a target:
+Tournament.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Attribute.cpp:
@@ -441,19 +662,46 @@ Attribute.cpp:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+# Not a target:
+Match.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Team.o: Team.h Team.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 60):
+	g++ -c Team.cpp -o Team.o
+	
+
+# Not a target:
+Tournament.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 CommonSkillCollectionTest: Attribute.o CommonSkillCollection.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 16):
+#  commands to execute (from `Makefile', line 18):
 	g++ Attribute.o CommonSkillCollection.o CommonSkillCollectionTest.cpp -o CommonSkillCollectionTest.out
 	
+
+# Not a target:
+MatchResult.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DefenderTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Defender.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 31):
+#  commands to execute (from `Makefile', line 33):
+ 
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Defender.o DefenderTest.cpp -o DefenderTest.out
 	
 
@@ -461,7 +709,7 @@ Defender.o: Defender.h Defender.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  commands to execute (from `Makefile', line 30):
 	g++ -c Defender.cpp -o Defender.o
 	
 
@@ -475,7 +723,7 @@ MidfielderTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 43):
+#  commands to execute (from `Makefile', line 45):
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Midfielder.o MidfielderTest.cpp -o MidfielderTest.out
 	
 
@@ -483,7 +731,7 @@ Midfielder.o: Midfielder.h Midfielder.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 40):
+#  commands to execute (from `Makefile', line 42):
 	g++ -c Midfielder.cpp -o Midfielder.o
 	
 
@@ -491,12 +739,18 @@ Player.o: Player.h Player.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 25):
+#  commands to execute (from `Makefile', line 27):
 	g++ -c CommonSkillCollection.o PhysicalAttributeCollection.o Player.cpp -o Player.o
 	
 
+# Not a target:
+Match.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=41/1024=4%, Rehash=0, Collisions=1/110=1%
+# Load=77/1024=8%, Rehash=0, Collisions=5/276=2%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -508,6 +762,6 @@ Player.o: Player.h Player.cpp
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed May 18 10:21:56 2022
+# Finished Make data base on Wed May 18 10:32:18 2022
 
  
