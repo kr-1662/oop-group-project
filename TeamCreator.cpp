@@ -12,6 +12,7 @@ void TeamCreator::create_user_team() {
     string input1;
     string input2;
     int user_team_index;
+    int array_position;
     string user_team = football_league.get_user_team_name();
     string user_team_array[4] = {"<Striker>", "<Midfielder>", "<Defender>", "<Goalkeeper>"};
     int starting_salary = 2000000;
@@ -39,11 +40,14 @@ void TeamCreator::create_user_team() {
                 selectable_players.print_possible_player_selections(player_position);
                 cout << "Enter the name of the player: ";
                 cin >> player_name;
+                cout << "what position in array is your player?" << endl;;
+                cin >> array_position;
                 user_team_array[0] = player_name;
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
-                remaining_salary -= selectable_players.get_striker_selections()[0].get_player_salary();
+                remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
+                cout << remaining_salary;
                 cout << endl;
             }
 
@@ -51,10 +55,14 @@ void TeamCreator::create_user_team() {
                 selectable_players.print_possible_player_selections(player_position);
                 cout << "Enter the name of the player: ";
                 cin >> player_name;
+                cout << "what position in array is your player?" << endl;;
+                cin >> array_position;
                 user_team_array[1] = player_name;
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
+                remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                cout << remaining_salary;
                 cout << endl;
             }
 
@@ -62,10 +70,14 @@ void TeamCreator::create_user_team() {
                 selectable_players.print_possible_player_selections(player_position);
                 cout << "Enter the name of the player: ";
                 cin >> player_name;
+                cout << "what position in array is your player?" << endl;;
+                cin >> array_position;
                 user_team_array[2] = player_name;
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
+                remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
+                cout << remaining_salary;
                 cout << endl;
             }
 
@@ -73,10 +85,14 @@ void TeamCreator::create_user_team() {
                 selectable_players.print_possible_player_selections(player_position);
                 cout << "Enter the name of the player: ";
                 cin >> player_name;
+                cout << "what position in array is your player?" << endl;;
+                cin >> array_position;
                 user_team_array[3] = player_name;
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
+                remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
+                cout << remaining_salary;
                 cout << endl;
             }
 
