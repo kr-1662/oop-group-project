@@ -27,7 +27,6 @@ public:
     float get_required_player_salary();
     virtual void print_info();
     virtual float total_player_rating() = 0;
-    char player_battle(Player* opponent);
     ~Player();
 };
 

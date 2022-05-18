@@ -1,13 +1,9 @@
-#include "TeamCreation.h"
+#include "TeamCreator.h"
 #include <iostream>
 
 using namespace std;
 
-TeamCreation::TeamCreation() {
-
-}
-
-void TeamCreation::create_user_team() {
+void TeamCreator::create_user_team() {
     string input = " ";
     string input2 = " ";
     string input3 = " ";
@@ -21,7 +17,7 @@ void TeamCreation::create_user_team() {
 
     if (input == "Y") {
         for (int i = 0; i < 8; i++) {
-            cout << football_league.get_teams()[i] << endl;
+            cout << football_league.get_teams()[i].get_team_name() << endl;
         }
         cout << "Select a team you wish to manage:";
         cin >> team_number;
@@ -37,20 +33,11 @@ void TeamCreation::create_user_team() {
                     cout << "Are you sure you want to add " << player_name << " to your team? Press Y to confirm:";
                     cin >> input2;
                     if (input2 != "N" || input2 != "Y") {
-                        cout << "Please enter either Y or N":
+                        cout << "Please enter either Y or N";
                         cin >> input2;
                     }
                 }
-                selectable_players.select_player(player_position, player_name);
-                football_league.get_teams()[i].add_player(i);
-                cout << "You have added " << player_name << " to your team" << endl;
-                for (int i = 0; i < 4; i++) {
-                    team[i] = player_name;
-                }
-                cout << "Your remaining Salary is: " << Salary_requirement << endl;
-                Salary_requirement -= required_player_salary;
-                cout << "Enter Y to finish choosing the team: ";
-                cin >> input3;
+
                 if (input3 == "Y") {
                     break;
                 }
@@ -60,7 +47,10 @@ void TeamCreation::create_user_team() {
                 }
 
                 else {
-                    while (input3 != "Y" || input3 != "N")
+                    while (input3 != "Y" || input3 != "N") {
+                        cout << "Please enter either Y or N";
+                        cin >> input3;
+                    }
                 }
             }
     }
@@ -80,22 +70,9 @@ void TeamCreation::create_user_team() {
                     cout << "Are you sure you want to add " << player_name << " to your team? Press Y to confirm:";
                     cin >> input2;
                     if (input2 != "N" || input2 != "Y") {
-                        cout << "Please enter either Y or N":
+                        cout << "Please enter either Y or N";
                         cin >> input2;
                     }
-                }
-                selectable_players.select_player(player_position, player_name);
-                football_league.get_teams()[i].add_player(i);
-                cout << "You have added " << player_name << " to your team" << endl;
-                for (int i = 0; i < 4; i++) {
-                    team[i] = " ";
-                }
-                cout << "Your remaining Salary is: " << Salary_requirement << endl;
-                Salary_requirement -= _salary;
-                cout << "Enter Y to finish choosing the player: ";
-                cin >> input3;
-                if (input3 == "Y") {
-                    break;
                 }
             }
         }
@@ -104,9 +81,5 @@ void TeamCreation::create_user_team() {
             cout << "You have successfully created your team" << endl;
         }
     }
-
-}
-
-TeamCreation::~TeamCreation() {
 
 }

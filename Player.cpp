@@ -43,16 +43,6 @@ void Player::print_info() {
     cout << "|| Dribbling: " << common_skill_ratings.get_dribbling().get_rating() << endl;
 }
 
-char Player::player_battle(Player* opponent) {
-    if (this->total_player_rating() > opponent->total_player_rating()) {
-        return 'W';
-    } else if (this->total_player_rating() < opponent->total_player_rating()) {
-        return 'L';
-    } else {
-        return 'D';
-    }
-}
-
 float Player::total_player_rating() {
     return (float(physical_attribute_ratings.total_physical_attribute_rating()) + float(common_skill_ratings.total_skill_rating()))/7;
 }

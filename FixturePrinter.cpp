@@ -10,9 +10,9 @@ football_league_teams(_football_league_teams), fixture_team_indexes(_fixture_tea
 void FixturePrinter::print() {
     cout << "Fixtures:" << endl;
     for (int i = 0; i < num_matches; i++) {
-        cout << football_league_teams[fixture_team_indexes[2*i]].get_football_team_name();
+        cout << football_league_teams[fixture_team_indexes[2*i]].get_team_name();
         cout << " vs ";
-        cout << football_league_teams[fixture_team_indexes[2*i+1]].get_football_team_name();
+        cout << football_league_teams[fixture_team_indexes[2*i+1]].get_team_name();
         cout << endl;
     }
     cout << endl;

@@ -2,7 +2,7 @@
 #define Match_H
 #include "Team.h"
 #include "MatchResult.h"
-#include "PlayerBattleWinChecker.h"
+#include "TeamPlayerBattle.h"
 #include <iostream>
 #include <string>
 
@@ -19,9 +19,8 @@ class Match {
     Match();
     Match(Team _team_one, Team _team_two);
     void set_teams(Team _team_one, Team _team_two);
-    void play_football_match();
+    MatchResult play_football_match();
     Team get_winning_team();
-    MatchResult get_match_result();
     ~Match();
 };
 

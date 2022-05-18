@@ -13,6 +13,7 @@ class TournamentRound {
     int num_of_matches;
     Team* winning_teams; 
     Match* football_matches;
+    MatchResult* football_match_results;
 
     public:
     TournamentRound(Team* _teams_in_tournament, string _user_team_name, int* _fixture_team_indexes, int _num_of_matches);
