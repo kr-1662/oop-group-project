@@ -30,6 +30,7 @@ void TeamCreator::create_user_team() {
         }
         cout << "Select the team you wish to manage: ";
         cin >> user_team;
+        football_league.set_user_team_name(user_team);
         cout << "You have selected " << user_team << endl;
         while (user_team_array[0] == " " || user_team_array[1] == " " || user_team_array[2] == " " || user_team_array[3] == " ") {
             cout << "Striker, Midfielder, Defender, GoalKeeper" << endl;
@@ -202,5 +203,6 @@ void TeamCreator::create_user_team() {
                 cout << endl;
             }
         }
+        
     }
 }

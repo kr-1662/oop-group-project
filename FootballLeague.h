@@ -21,6 +21,7 @@ public:
     int get_user_team_index();
     Team get_team(string team_name);
     Team* get_teams();
+    void set_defender(string name);
     ~FootballLeague();
 };
 
