@@ -1,3 +1,5 @@
+OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o
+
 all: SimGame
 
 SimGame: Attribute.o CommonSkillCollection.o
@@ -54,5 +56,53 @@ PlayerPool.o: PlayerPool.h PlayerPool.cpp
 PlayerPoolTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o 
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o PlayerPoolTest.cpp -o PlayerPoolTest.out
 
+Team.o: Team.h Team.cpp
+	g++ -c Team.cpp -o Team.o
+
+TeamTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o TeamTest.cpp -o TeamTest.out
+
+FootballLeague.o: FootballLeague.h FootballLeague.cpp
+	g++ -c FootballLeague.cpp -o FootballLeague.o
+
+FootballLeagueTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FootballLeagueTest.cpp -o FootballLeagueTest.out
+
+TeamPlayerBattle.o: TeamPlayerBattle.h TeamPlayerBattle.cpp
+	g++ -c TeamPlayerBattle.cpp -o TeamPlayerBattle.o
+
+TeamPlayerBattleTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o TeamPlayerBattleTest.cpp -o TeamPlayerBattleTest.out
+
+MatchResult.o: MatchResult.h MatchResult.cpp
+	g++ -c MatchResult.cpp -o MatchResult.o
+
+MatchResultTest: MatchResult.o
+	g++ MatchResult.o MatchResultTest.cpp -o MatchResultTest.out
+
+Match.o: Match.h Match.cpp
+	g++ -c Match.cpp -o Match.o
+
+MatchTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o MatchTest.cpp -o MatchTest.out
+
+FixturePrinter.o: FixturePrinter.h FixturePrinter.cpp
+	g++ -c FixturePrinter.cpp -o FixturePrinter.o
+
+FixturePrinterTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FixturePrinter.o
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FixturePrinter.o FixturePrinterTest.cpp -o FixturePrinterTest.out
+
+TournamentRound.o: TournamentRound.h TournamentRound.cpp
+	g++ -c TournamentRound.cpp -o TournamentRound.o
+
+TournamentRoundTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o
+	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o TournamentRoundTest.cpp -o TournamentRoundTest.out
+
+Tournament.o: Tournament.h Tournament.cpp
+	g++ -c Tournament.cpp -o Tournament.o
+
+TournamentTest: $(OBJ)
+	g++ $(OBJ) TournamentTest.cpp -o TournamentTest.out
+
 clean:
-	rm -f *.out SimGame
+	rm -f *.out *.o SimGame
