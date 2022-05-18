@@ -52,5 +52,5 @@ int FootballLeague::get_user_team_index() {
 string FootballLeague::get_user_team_name(){return user_selected_team_name;}
 
 FootballLeague::~FootballLeague(){
-    delete [] football_league_teams;
+    //delete [] football_league_teams;
 }
