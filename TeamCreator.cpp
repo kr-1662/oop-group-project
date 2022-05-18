@@ -3,83 +3,86 @@
 
 using namespace std;
 
-void TeamCreator::create_user_team() {
-    string input = " ";
-    string input2 = " ";
-    string input3 = " ";
-    string player_name = " ";
-    string player_position = " ";
-    string team[4] = {" ", " ", " ", " "};
-    int team_number;
-    float Salary_requirement = 2000000;
-    cout << "Enter Y to begin the premier league simulation:";
-    cin >> input;
+TeamCreator::TeamCreator(PlayerPool &_selectable_players, FootballLeague &_football_league) {
+    selectable_players = _selectable_players;
+    football_league = _football_league;
+}
 
-    if (input == "Y") {
+void TeamCreator::create_user_team() {
+    string input1;
+    string input2;
+    int user_team_index;
+    string user_team = football_league.get_user_team_name();
+    string user_team_array[4] = {"<Striker>", "<Midfielder>", "<Defender>", "<Goalkeeper>"};
+    int starting_salary = 2000000;
+    int remaining_salary = starting_salary;
+    string player_position;
+    string player_name;
+
+    cout << "Enter Y to begin the Premier League Simulation: ";
+    cin >> input1;
+
+    if (input1 == "Y") {
+        cout << "Starting Salary Cap: " << starting_salary << endl << endl;
         for (int i = 0; i < 8; i++) {
             cout << football_league.get_teams()[i].get_team_name() << endl;
         }
-        cout << "Select a team you wish to manage:";
-        cin >> team_number;
-        if (team_number == football_league.get_user_team_index()) {
-            cout << "You have selected " << football_league.get_teams()[team_number].get_team_name() << endl;
-            for (int i = 0; i < 4; i++) {
-                cout << "Enter the position of the player: ";
-                cin >> player_position;
+        cout << "Select the team you wish to manage: ";
+        cin >> user_team;
+        cout << "You have selected " << user_team << endl;
+        while (true) {
+            cout << "Striker, Midfielder, Defender, GoalKeeper" << endl;
+            cout << "Enter the position of the player out of the above options: ";
+            cin >> player_position;
+
+            if (player_position == "Striker") {
                 selectable_players.print_possible_player_selections(player_position);
-                while (input2 != "Y") {
-                    cout << "Enter the name of the player you wish to add to your team:";
-                    cin >> player_name;
-                    cout << "Are you sure you want to add " << player_name << " to your team? Press Y to confirm:";
-                    cin >> input2;
-                    if (input2 != "N" || input2 != "Y") {
-                        cout << "Please enter either Y or N";
-                        cin >> input2;
-                    }
+                cout << "Enter the name of the player: ";
+                cin >> player_name;
+                user_team_array[0] = player_name;
+                for (int i = 0; i < 4; i++) {
+                    cout << user_team_array[i] << endl;
                 }
-
-                if (input3 == "Y") {
-                    break;
-                }
-
-                else if (input3 == "N") {
-                    continue;
-                }
-
-                else {
-                    while (input3 != "Y" || input3 != "N") {
-                        cout << "Please enter either Y or N";
-                        cin >> input3;
-                    }
-                }
+                remaining_salary -= selectable_players.get_striker_selections()[0].get_player_salary();
+                cout << endl;
             }
-    }
-    if (Salary_requirement < 0) {
-            cout << "You have exceeded your salary requirements" << endl;
-            for (int i = 0; i < 4; i++) {
-                team[i] = " ";
-            }
-            cout << "You have selected " << football_league.get_teams()[team_number].get_team_name() << endl;
-            for (int i = 0; i < 4; i++) {
-                cout << "Enter the position of the player: ";
-                cin >> player_position;
+
+            else if (player_position == "Midfielder") {
                 selectable_players.print_possible_player_selections(player_position);
-                while (input2 != "Y") {
-                    cout << "Enter the name of the player you wish to add to your team:";
-                    cin >> player_name;
-                    cout << "Are you sure you want to add " << player_name << " to your team? Press Y to confirm:";
-                    cin >> input2;
-                    if (input2 != "N" || input2 != "Y") {
-                        cout << "Please enter either Y or N";
-                        cin >> input2;
-                    }
+                cout << "Enter the name of the player: ";
+                cin >> player_name;
+                user_team_array[1] = player_name;
+                for (int i = 0; i < 4; i++) {
+                    cout << user_team_array[i] << endl;
                 }
+                cout << endl;
+            }
+
+            else if (player_position == "Defender") {
+                selectable_players.print_possible_player_selections(player_position);
+                cout << "Enter the name of the player: ";
+                cin >> player_name;
+                user_team_array[2] = player_name;
+                for (int i = 0; i < 4; i++) {
+                    cout << user_team_array[i] << endl;
+                }
+                cout << endl;
+            }
+
+            else if (player_position == "GoalKeeper") {
+                selectable_players.print_possible_player_selections(player_position);
+                cout << "Enter the name of the player: ";
+                cin >> player_name;
+                user_team_array[3] = player_name;
+                for (int i = 0; i < 4; i++) {
+                    cout << user_team_array[i] << endl;
+                }
+                cout << endl;
+            }
+
+            else {
+                cout << "Invalid input. Please try again." << endl;
             }
         }
-
-    else {
-            cout << "You have successfully created your team" << endl;
-        }
     }
-
 }

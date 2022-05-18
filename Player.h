@@ -24,7 +24,7 @@ public:
     string get_name();
     PhysicalAttributeCollection get_physical_attribute_ratings();
     CommonSkillCollection get_common_skill_ratings();
-    float get_required_player_salary();
+    float get_required_player_salary() const;
     virtual void print_info();
     virtual float total_player_rating() = 0;
     ~Player();

@@ -8,13 +8,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed May 18 10:32:18 2022
+# Make data base, printed on Wed May 18 10:55:05 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
+ 
 ?F = $(notdir $?)
 # makefile (from `Makefile', line 1)
 OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o TeamCreator.o
@@ -116,9 +117,9 @@ MAKEFLAGS = Rrqp
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
- 
 # environment
 XPC_SERVICE_NAME = application.com.microsoft.VSCode.3624003.3624009
+ 
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -191,6 +192,7 @@ CommonSkillCollection.o: CommonSkillCollection.h CommonSkillCollection.cpp
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 15):
 	g++ -c CommonSkillCollection.cpp -o CommonSkillCollection.o
+ 
 	
 
 FixturePrinterTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FixturePrinter.o
@@ -311,7 +313,7 @@ MatchTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Pla
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-18 10:30:01
+#  Last modified 2022-05-18 10:54:15
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -367,7 +369,6 @@ PhysicalAttributeCollectionTest: Attribute.o PhysicalAttributeCollection.o
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 24):
- 
 	g++ Attribute.o PhysicalAttributeCollection.o PhysicalAttributeCollectionTest.cpp -o PhysicalAttributeCollectionTest.out
 	
 
@@ -430,6 +431,7 @@ MatchResultTest: MatchResult.o
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 81):
+ 
 	g++ MatchResult.o MatchResultTest.cpp -o MatchResultTest.out
 	
 
@@ -582,7 +584,6 @@ SimGame: Attribute.o CommonSkillCollection.o
 # automatic
 # ^ := Attribute.o CommonSkillCollection.o
 # automatic
- 
 # ? := Attribute.o CommonSkillCollection.o
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
@@ -672,6 +673,7 @@ Team.o: Team.h Team.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 60):
 	g++ -c Team.cpp -o Team.o
 	
@@ -701,7 +703,6 @@ DefenderTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o 
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 33):
- 
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Defender.o DefenderTest.cpp -o DefenderTest.out
 	
 
@@ -762,6 +763,6 @@ Match.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed May 18 10:32:18 2022
+# Finished Make data base on Wed May 18 10:55:05 2022
 
  

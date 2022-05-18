@@ -265,7 +265,7 @@ void PlayerPool::read_in_goalkeeper(string filename){
     }
 }
 
-void PlayerPool::print_possible_player_selections(string position){
+void PlayerPool::print_possible_player_selections(const string position){
     if (position == "Striker"){
         for (int i = 0; i < 8; i++){
             striker_selections[i].print_info();
@@ -326,8 +326,8 @@ Defender* PlayerPool::get_defender_selections(){return defender_selections;}
 Goalkeeper* PlayerPool::get_goalkeeper_selections(){return goalkeeper_selections;}
 
 PlayerPool::~PlayerPool(){
-   // delete [] striker_selections;
-   // delete [] midfielder_selections;
-   // delete [] defender_selections;
-   // delete [] goalkeeper_selections;
+    //delete [] striker_selections;
+    //delete [] midfielder_selections;
+    //delete [] defender_selections;
+    //delete [] goalkeeper_selections;
 }

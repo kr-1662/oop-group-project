@@ -7,7 +7,7 @@ FootballLeague::FootballLeague(){
     user_team_index = 0;
 }
 
-void FootballLeague::read_in_teams(PlayerPool available_players){
+void FootballLeague::read_in_teams(PlayerPool &available_players){
   
     for (int i = 0; i < 8; i++){
         football_league_teams[i].set_team_members(available_players.get_striker_selections()[i], available_players.get_midfielder_selections()[i], available_players.get_defender_selections()[i], available_players.get_goalkeeper_selections()[i]);
@@ -52,5 +52,5 @@ int FootballLeague::get_user_team_index() {
 string FootballLeague::get_user_team_name(){return user_selected_team_name;}
 
 FootballLeague::~FootballLeague(){
-    delete [] football_league_teams;
+    //delete [] football_league_teams;
 }

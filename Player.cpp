@@ -29,7 +29,7 @@ PhysicalAttributeCollection Player::get_physical_attribute_ratings(){return phys
     
 CommonSkillCollection Player::get_common_skill_ratings(){return common_skill_ratings;}
     
-float Player::get_required_player_salary(){return required_player_salary;}
+float Player::get_required_player_salary() const {return required_player_salary;}
 
 void Player::print_info() {
     cout << "Name: " << name << endl;

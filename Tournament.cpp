@@ -173,5 +173,3 @@ void Tournament::tournament_sim(){
         return;
     } 
 }
-
-Tournament::~Tournament() {};
