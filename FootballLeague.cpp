@@ -7,7 +7,7 @@ FootballLeague::FootballLeague(){
     user_team_index = 0;
 }
 
-void FootballLeague::read_in_teams(PlayerPool available_players){
+void FootballLeague::read_in_teams(PlayerPool &available_players){
   
     for (int i = 0; i < 8; i++){
         football_league_teams[i].set_team_members(available_players.get_striker_selections()[i], available_players.get_midfielder_selections()[i], available_players.get_defender_selections()[i], available_players.get_goalkeeper_selections()[i]);

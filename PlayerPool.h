@@ -31,7 +31,7 @@ class PlayerPool{
     Midfielder* get_midfielder_selections();
     Defender* get_defender_selections();
     Goalkeeper* get_goalkeeper_selections();
-    void print_possible_player_selections(string position);
+    void print_possible_player_selections(const string position);
     Striker select_striker(string name);
     Midfielder select_midfielder(string name);
     Defender select_defender(string name);

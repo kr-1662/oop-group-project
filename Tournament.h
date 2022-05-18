@@ -17,7 +17,6 @@ class Tournament{
     public:
     Tournament(Team* _football_league_teams, string user_team_name);
     void tournament_sim();
-    ~Tournament();
 };
 
 #endif
