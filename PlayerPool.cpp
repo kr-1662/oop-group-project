@@ -326,8 +326,8 @@ Defender* PlayerPool::get_defender_selections(){return defender_selections;}
 Goalkeeper* PlayerPool::get_goalkeeper_selections(){return goalkeeper_selections;}
 
 PlayerPool::~PlayerPool(){
-    delete [] striker_selections;
-    delete [] midfielder_selections;
-    delete [] defender_selections;
-    delete [] goalkeeper_selections;
+    //delete [] striker_selections;
+    //delete [] midfielder_selections;
+    //delete [] defender_selections;
+    //delete [] goalkeeper_selections;
 }
