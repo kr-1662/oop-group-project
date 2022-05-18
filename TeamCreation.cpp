@@ -48,7 +48,7 @@ void TeamCreation::create_user_team() {
                     team[i] = player_name;
                 }
                 cout << "Your remaining Salary is: " << Salary_requirement << endl;
-                Salary_requirement -= selectable_players(player_name);
+                Salary_requirement -= required_player_salary;
                 cout << "Enter Y to finish choosing the team: ";
                 cin >> input3;
                 if (input3 == "Y") {
