@@ -8,11 +8,14 @@
 
 using namespace std;
 
-Tournament::Tournament(FootballLeague _football_league) : FootballLeague(_football_league) {}
+Tournament::Tournament(Team* _football_league_teams, string _user_team_name){
+    football_league_teams = _football_league_teams;
+    user_team_name = _user_team_name;
+}
 
 void Tournament::tournament_sim(){
     char progression_input = 'N'; // Stores input when user asked to progress simulation.
-
+    
     // Quarterfinal fixture organisation
     int* team_index = new int[8]; // used to know which teams have organised fixtures already.
     for (int i = 0; i < 8; i++) {
@@ -21,18 +24,17 @@ void Tournament::tournament_sim(){
 
     int* quarterfinals_fixture_team_indexes = new int[8]; // indexes of quarterfinal fixtures.
     
-    srand(2022);
-    int rand_index = round(rand() % 9);
+    srand(time(NULL));
+    int rand_index = round(rand() % 8);
 
     for (int i = 0; i < 8; i++) {
-
-        while (team_index[rand_index] = 9) {
-            rand_index = round(rand() % 9);
+        while (team_index[rand_index] == 9) {
+            rand_index = round(rand() % 8);
         }
-
         team_index[rand_index] = 9;
         quarterfinals_fixture_team_indexes[i] = rand_index;
     }
+    
     delete [] team_index;
 
     // Progress simulation?
@@ -46,10 +48,11 @@ void Tournament::tournament_sim(){
     }    
         
     // Print out quarterfinal fixtures
-    FixturePrinter quarterfinal_printer(football_league.get_football_league_teams(), quarterfinals_fixture_team_indexes, 4);
+    FixturePrinter quarterfinal_printer(football_league_teams, quarterfinals_fixture_team_indexes, 4);
     quarterfinal_printer.print();
 
     // Progress simulation?
+    progression_input = 'N';
     while (progression_input != 'Y'){
         cout << "Enter Y to play the quarterfinals: ";
         cin >> progression_input;
@@ -60,9 +63,10 @@ void Tournament::tournament_sim(){
     }   
 
     // Simulate quarterfinals
-    TournamentRound quarterfinals(football_league.get_football_league_teams(), football_league.get_user_team_name(), quarterfinals_fixture_team_indexes, 4);
+    TournamentRound quarterfinals(football_league_teams, user_team_name, quarterfinals_fixture_team_indexes, 4);
     Team* semifinalists = quarterfinals.play_tournament_round();
     quarterfinals.print_results();
+    cout << endl;
     delete [] quarterfinals_fixture_team_indexes;
     
     if (quarterfinals.is_still_in_tournament()) {
@@ -74,6 +78,7 @@ void Tournament::tournament_sim(){
     }
 
     // Progress simulation?
+    progression_input = 'N';
     while (progression_input != 'Y'){
         cout << "To advance to the semi-finals, enter Y: ";
         cin >> progression_input;
@@ -94,6 +99,7 @@ void Tournament::tournament_sim(){
     semifinal_printer.print();
 
     // Progress simulation?
+    progression_input = 'N';
     while (progression_input != 'Y'){
         cout << "Enter Y to play the semi-finals: ";
         cin >> progression_input;
@@ -104,9 +110,10 @@ void Tournament::tournament_sim(){
     }   
 
     // Simulate semi-finals
-    TournamentRound semifinals(semifinalists, football_league.get_user_team_name(), semifinals_fixture_team_indexes, 2);
+    TournamentRound semifinals(semifinalists, user_team_name, semifinals_fixture_team_indexes, 2);
     Team* grandfinalists = semifinals.play_tournament_round();
     semifinals.print_results();
+    cout << endl;
     delete [] semifinals_fixture_team_indexes;
     
     if (semifinals.is_still_in_tournament()) {
@@ -118,6 +125,7 @@ void Tournament::tournament_sim(){
     }
 
     // Progress simulation?
+    progression_input = 'N';
     while (progression_input != 'Y'){
         cout << "To advance to the grand final, enter Y: ";
         cin >> progression_input;
@@ -138,6 +146,7 @@ void Tournament::tournament_sim(){
     grandfinal_printer.print();
 
     // Progress simulation?
+    progression_input = 'N';
     while (progression_input != 'Y'){
         cout << "Enter Y to play the grand final: ";
         cin >> progression_input;
@@ -148,20 +157,21 @@ void Tournament::tournament_sim(){
     }
 
     // Simulate grand final
-    TournamentRound grandfinal(grandfinalists, football_league.get_user_team_name(), grandfinal_fixture_team_indexes, 1);
+    TournamentRound grandfinal(grandfinalists, user_team_name, grandfinal_fixture_team_indexes, 1);
     Team* champion = grandfinal.play_tournament_round();
     grandfinal.print_results();
+    cout << endl;
     
     if (grandfinal.is_still_in_tournament()) {
-        cout << "Congratulations, you have lead " << champion->get_football_team_name() << " to ";
-        cout << football_league.get_name() << " glory!" << endl;
+        cout << "Congratulations, you have lead " << champion->get_team_name();
+        cout << " to Premier League glory!" << endl;
         cout << "End of simulation." << endl;
 
     }else{
         cout << "You Lost! Better luck next time." << endl;
         cout << "End of simulation." << endl;
         return;
-    }   
+    } 
 }
 
 Tournament::~Tournament() {};

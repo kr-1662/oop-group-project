@@ -2,17 +2,25 @@
 #define FootballLeague_h
 
 #include "Team.h"
+#include "PlayerPool.h"
+#include <string>
 
-class FootballLeague
-{
+using namespace std;
+
+class FootballLeague {
 private:
-    Team * football_league_teams = new Team[8];
+    Team* football_league_teams;
     string user_selected_team_name;
-    int team_index;
+    int user_team_index;
+    
 public:
-    FootballLeague(/* args */);
-    void read_in_teams(string filename);
-    void set_user_team(string team_name);
+    FootballLeague();
+    void read_in_teams(PlayerPool available_players);
+    void set_user_team_name(string team_name);
+    string get_user_team_name();
+    int get_user_team_index();
+    Team get_team(string team_name);
+    Team* get_teams();
     ~FootballLeague();
 };
 

@@ -14,19 +14,31 @@ Goalkeeper::Goalkeeper(string _name, PhysicalAttributeCollection _physical_attri
         distributing = _distributing;
         diving = _diving;
         handling = _handling;
-    }
+}
 
-void Goalkeeper::set_distributing(Attribute _distributing){distributing = _distributing;}
+void Goalkeeper::set_distributing(Attribute _distributing){
+    distributing = _distributing;
+}
 
-void Goalkeeper::set_diving(Attribute _diving){diving = _diving;}
+void Goalkeeper::set_diving(Attribute _diving){
+    diving = _diving;
+}
 
-void Goalkeeper::set_handling(Attribute _handling){handling = _handling;}
+void Goalkeeper::set_handling(Attribute _handling){
+    handling = _handling;
+}
 
-Attribute Goalkeeper::get_distributing(){return distributing;}
+Attribute Goalkeeper::get_distributing(){
+    return distributing;
+}
 
-Attribute Goalkeeper::get_diving(){return diving;}
+Attribute Goalkeeper::get_diving(){
+    return diving;
+}
 
-Attribute Goalkeeper::get_handling(){return handling;}
+Attribute Goalkeeper::get_handling(){
+    return handling;
+}
 
 void Goalkeeper::print_info(){
     Player::print_info();

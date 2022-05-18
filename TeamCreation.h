@@ -1,9 +1,14 @@
-#ifndef TeamCreation_H_
-#define TeamCreation_H_
+#ifndef TeamCreation_H
+#define TeamCreation_H
+
 #include <iostream>
 #include <string>
 #include"PlayerPool.h"
 #include"FootballLeague.h"
+
+#include "PlayerPool.h"
+#include "FootballLeague.h"
+#include "Player.h"
 
 using namespace std; 
 
@@ -14,3 +19,5 @@ class TeamCreation{
     public:
     void create_user_team();
 };
+
+#endif
