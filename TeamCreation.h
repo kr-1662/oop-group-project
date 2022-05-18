@@ -2,15 +2,15 @@
 #define TeamCreation_H_
 #include <iostream>
 #include <string>
+#include"PlayerPool.h"
+#include"FootballLeague.h"
 
 using namespace std; 
 
 class TeamCreation{
     private:
     PlayerPool selectable_players;
-    FootballLeauge football_league; 
+    FootballLeague football_league; 
     public:
-    TeamCreation();
     void create_user_team();
-    ~TeamCreation();
 };
