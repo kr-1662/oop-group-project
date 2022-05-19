@@ -53,10 +53,7 @@ void TeamCreator::create_user_team() {
                 for (int i = 0; i < 4; i++) {
                     cout << "[" << user_team_array[i] << "] ";
                 }
-<<<<<<< HEAD
-=======
                 cout << endl;
->>>>>>> 42a3c2db0f3f456a33e757a97134812853930e7b
                 remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
                 cout << "Remaining Salary: " << remaining_salary << endl;
                 cout << endl;
@@ -92,10 +89,7 @@ void TeamCreator::create_user_team() {
                 for (int i = 0; i < 4; i++) {
                     cout << "[" << user_team_array[i] << "] ";
                 }
-<<<<<<< HEAD
-=======
                 cout << endl;
->>>>>>> 42a3c2db0f3f456a33e757a97134812853930e7b
                 remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
                 cout << "Remaining Salary: " << remaining_salary << endl;
                 cout << endl;
@@ -124,10 +118,6 @@ void TeamCreator::create_user_team() {
                 cout << "Invalid input. Please try again." << endl;
             }
         }
-<<<<<<< HEAD
-=======
-
-
         cout << "Congratulations! You have selected your team!" << endl;
         cout << "Are you satisfied with your current players? (Y/N): ";
 
@@ -141,16 +131,12 @@ void TeamCreator::create_user_team() {
                     user_team_array[i] = " ";
                 }
                 while (user_team_array[0] == " " || user_team_array[1] == " " || user_team_array[2] == " " || user_team_array[3] == " ") {
-<<<<<<< HEAD
                     cout << "Striker, Midfielder, Defender, GoalKeeper" << endl;
-=======
                     cout << "Striker, Midfielder, Defender, GoalKeeper" << endl << endl;
->>>>>>> 42a3c2db0f3f456a33e757a97134812853930e7b
                     cout << "Enter the position of the player out of the above options: ";
                     cin >> player_position;
                     cout << endl;
->>>>>>> a463c78d778d3f840a74dffb0803c7de38fe9729
-
+                    
         while (true) {
             cout << "Congratulations! You have selected your team!" << endl;
             cout << "Are you satisfied with your current players? (Y/N): ";
@@ -326,7 +312,6 @@ void TeamCreator::create_user_team() {
 =======
                 cout << endl;
             }
->>>>>>> a463c78d778d3f840a74dffb0803c7de38fe9729
 
                 else if (player_position == "GoalKeeper") {
                     selectable_players.print_possible_player_selections(player_position);
