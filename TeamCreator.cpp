@@ -47,11 +47,8 @@ void TeamCreator::create_user_team() {
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
-<<<<<<< HEAD
                 remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
-                cout << remaining_salary;
-=======
->>>>>>> 79f97f50f90ea0d8f3833771819f9d6682947dbe
+                cout << "Remaining Salary: " << remaining_salary << endl;
                 cout << endl;
             }
 
@@ -66,7 +63,7 @@ void TeamCreator::create_user_team() {
                     cout << user_team_array[i] << endl;
                 }
                 remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
-                cout << remaining_salary;
+                cout << "Remaining Salary: " << remaining_salary << endl;
                 cout << endl;
             }
 
@@ -80,12 +77,8 @@ void TeamCreator::create_user_team() {
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
-<<<<<<< HEAD
                 remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
-                cout << remaining_salary;
-=======
                 cout << "Remaining Salary: " << remaining_salary << endl;
->>>>>>> 79f97f50f90ea0d8f3833771819f9d6682947dbe
                 cout << endl;
             }
 
@@ -100,7 +93,7 @@ void TeamCreator::create_user_team() {
                     cout << user_team_array[i] << endl;
                 }
                 remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
-                cout << remaining_salary;
+                cout << "Remaining Salary: " << remaining_salary << endl;
                 cout << endl;
             }
 
@@ -108,8 +101,11 @@ void TeamCreator::create_user_team() {
                 cout << "Invalid input. Please try again." << endl;
             }
         }
+
+
         cout << "Congratulations! You have selected your team!" << endl;
         cout << "Are you satisfied with your current players? (Y/N): ";
+
         cin >> input3;
         if (input3 == "Y") {
             if (remaining_salary < 0) {
@@ -117,7 +113,7 @@ void TeamCreator::create_user_team() {
                 for (int i = 0; i < 4; i++) {
                     user_team_array[i] = " ";
                 }
-                while (user_team_array[0] == "<Striker>" || user_team_array[1] == "<Midfielder>" || user_team_array[2] == "<Defender>" || user_team_array[3] == "<Goalkeeper>") {
+                while (user_team_array[0] == " " || user_team_array[1] == " " || user_team_array[2] == " " || user_team_array[3] == " ") {
                     cout << "Striker, Midfielder, Defender, GoalKeeper" << endl;
                     cout << "Enter the position of the player out of the above options: ";
                     cin >> player_position;
@@ -130,6 +126,8 @@ void TeamCreator::create_user_team() {
                         for (int i = 0; i < 4; i++) {
                             cout << user_team_array[i] << endl;
                         }
+                        remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
+                        cout << "Remaining Salary: " << remaining_salary << endl;
                         cout << endl;
                     }
 
@@ -141,6 +139,8 @@ void TeamCreator::create_user_team() {
                         for (int i = 0; i < 4; i++) {
                             cout << user_team_array[i] << endl;
                         }
+                        remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
+                        cout << "Remaining Salary: " << remaining_salary << endl;
                         cout << endl;
                     }
 
@@ -152,7 +152,6 @@ void TeamCreator::create_user_team() {
                         for (int i = 0; i < 4; i++) {
                             cout << user_team_array[i] << endl;
                         }
-                        cout << "Remaining Salary: " << remaining_salary << endl;
                         cout << endl;
                     }
 
@@ -164,6 +163,8 @@ void TeamCreator::create_user_team() {
                         for (int i = 0; i < 4; i++) {
                             cout << user_team_array[i] << endl;
                         }
+                        remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
+                        cout << "Remaining Salary: " << remaining_salary << endl;
                         cout << endl;
                     }
 
@@ -174,6 +175,7 @@ void TeamCreator::create_user_team() {
             }
 
             else {
+                
             }
         }
 
@@ -210,7 +212,6 @@ void TeamCreator::create_user_team() {
                 for (int i = 0; i < 4; i++) {
                     cout << user_team_array[i] << endl;
                 }
-                cout << "Remaining Salary: " << remaining_salary << endl;
                 cout << endl;
             }
 
