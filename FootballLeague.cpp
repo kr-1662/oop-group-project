@@ -49,6 +49,10 @@ int FootballLeague::get_user_team_index() {
     return user_team_index;
 }
 
+void FootballLeague::set_defender(string name) {
+    
+}
+
 string FootballLeague::get_user_team_name(){return user_selected_team_name;}
 
 FootballLeague::~FootballLeague(){
