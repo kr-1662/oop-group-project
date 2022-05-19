@@ -110,5 +110,8 @@ TeamCreatorTest: $(OBJ)
 TournamentTest: $(OBJ)
 	g++ TournamentTest.cpp $(OBJ) -o a.out
 
+MainFile: $(OBJ)
+	g++ TournamentTest.cpp TeamCreatorTest.cpp main.cpp $(OBJ) -o a.out
+
 clean:
 	rm -f *.out *.o SimGame
