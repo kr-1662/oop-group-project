@@ -226,6 +226,7 @@ void TeamCreator::create_user_team() {
                         cout << user_team_array[i] << endl;
                     }
                     cout << endl;
+                    remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
                 }
 
                 else if (player_position == "Midfielder") {
