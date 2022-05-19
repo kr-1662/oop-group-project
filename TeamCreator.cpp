@@ -367,6 +367,9 @@ void TeamCreator::create_user_team() {
                     for (int i = 0; i < 4; i++) {
                         cout << user_team_array[i] << endl;
                     }
+                    //remaining_salary += current player salary (figure this out)
+                    remaining_salary -= selectable_players.get_striker_selections()[array_position].get_required_player_salary();
+                    cout << "Remaining Salary: " << remaining_salary << endl;
                     cout << endl;
                 }
 
@@ -378,6 +381,9 @@ void TeamCreator::create_user_team() {
                     for (int i = 0; i < 4; i++) {
                         cout << user_team_array[i] << endl;
                     }
+                    //remaining_salary += current player salary (figure this out)
+                    remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                    cout << "Remaining Salary: " << remaining_salary << endl;
                     cout << endl;
                 }
 
@@ -389,6 +395,8 @@ void TeamCreator::create_user_team() {
                     for (int i = 0; i < 4; i++) {
                         cout << user_team_array[i] << endl;
                     }
+                    //remaining_salary += current player salary (figure this out)
+                    remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
                     cout << "Remaining Salary: " << remaining_salary << endl;
                     cout << endl;
                 }
@@ -401,6 +409,9 @@ void TeamCreator::create_user_team() {
                     for (int i = 0; i < 4; i++) {
                         cout << user_team_array[i] << endl;
                     }
+                    //remaining_salary += current player salary (figure this out)
+                    remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
+                    cout << "Remaining Salary: " << remaining_salary << endl;
                     cout << endl;
                 }
             }
