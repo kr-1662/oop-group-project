@@ -13,6 +13,7 @@ protected:
     PhysicalAttributeCollection physical_attribute_ratings;
     CommonSkillCollection common_skill_ratings;
     float required_player_salary;
+    float print_selected_player_salary;
     
 public:
     Player();

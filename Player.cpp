@@ -13,6 +13,7 @@ Player::Player(string _name, PhysicalAttributeCollection _physical_attribute_rat
     physical_attribute_ratings = _physical_attribute_ratings;
     common_skill_ratings = _common_skill_ratings;
     required_player_salary = _salary;
+    print_selected_player_salary = required_player_salary;
 }
 
 void Player::set_name(string _name){name = _name;}
@@ -22,6 +23,8 @@ void Player::set_physical_attribute_ratings(PhysicalAttributeCollection _physica
 void Player::set_common_skill_ratings(CommonSkillCollection _common_skill_ratings){common_skill_ratings = _common_skill_ratings;}
     
 void Player::set_required_player_salary(float _required_player_salary){required_player_salary = _required_player_salary;}
+
+void Player::set_print_selected_player_salary(float print_selected_player_salary){print_selected_player_salary = _print_selected_player_salary;}
     
 string Player::get_name(){return name;}
     
@@ -30,6 +33,8 @@ PhysicalAttributeCollection Player::get_physical_attribute_ratings(){return phys
 CommonSkillCollection Player::get_common_skill_ratings(){return common_skill_ratings;}
     
 float Player::get_required_player_salary() const {return required_player_salary;}
+
+float Player::get_print_selected_player_salary() {return print_selected_player_salary;}
 
 void Player::print_info() {
     cout << "Name: " << name << endl;

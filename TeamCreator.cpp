@@ -45,6 +45,7 @@ void TeamCreator::create_user_team() {
                 selectable_players.print_possible_player_selections(player_position);
                 cout << endl;
                 cout << "Enter the name of the player: ";
+<<<<<<< HEAD
                 cin >> player_name;
                 //do{
                     cout << "what position in array is your player?";
@@ -56,24 +57,34 @@ void TeamCreator::create_user_team() {
                         for (int i = 0; i < 4; i++) {
                             cout << "[" << user_team_array[i] << "] ";
                         }
+=======
+>>>>>>> b8ffef66bd5f873dd1036a1a185efa3c3bb2f93d
                 for (int i = 0; i < 8; i++) {
-                }
-                cout << "what position in array is your player?";
-                cin >> array_position;
-                if (array_position >= 0 || array_position <= 7) {
-                    user_team_array[0] = player_name;
-                    cout << endl;
-                    for (int i = 0; i < 4; i++) {
-                        cout << "[" << user_team_array[i] << "] ";
-                    }
-                    cout << endl;
-                    remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
-                    cout << "Remaining Salary: " << remaining_salary << endl;
-                    cout << endl;
-                }
+                    if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                        cout << "what position in array is your player?";
+                        cin >> array_position;
+                        if (array_position >= 0 || array_position <= 7) {
+                            user_team_array[1] = player_name;
+                            cout << endl;
+                            for (int i = 0; i < 4; i++) {
+                                cout << "[" << user_team_array[i] << "] ";
+                            }
+                            cout << endl;
+                            remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                            cout << "Remaining Salary: " << remaining_salary << endl;
+                            cout << endl;
+                            break;
+                        }
 
-                else {
-                    cout << "Invalid input. Try again" << endl;
+                        else {
+                            cout << "Invalid input. Try again" << endl;
+                            break;
+                        }
+                    }
+                    else {
+                        cout << "Invalid input. Try again" << endl;
+                        break;
+                    }
                 }
             }
                         cout << endl;
@@ -106,6 +117,7 @@ void TeamCreator::create_user_team() {
                             remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
                             cout << "Remaining Salary: " << remaining_salary << endl;
                             cout << endl;
+                            break;
                         }
 
                         else {
@@ -123,22 +135,30 @@ void TeamCreator::create_user_team() {
                 cout << endl;
                 cout << "Enter the name of the player: ";
                 cin >> player_name;
-                cout << "what position in array is your player?";
-                cin >> array_position;
-                if (array_position >= 0 || array_position <= 7) {
-                    user_team_array[2] = player_name;
-                    cout << endl;
-                    for (int i = 0; i < 4; i++) {
-                        cout << "[" << user_team_array[i] << "] ";
-                    }
-                    cout << endl;
-                    remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
-                    cout << "Remaining Salary: " << remaining_salary << endl;
-                    cout << endl;
-                }
+                for (int i = 0; i < 8; i++) {
+                    if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                        cout << "what position in array is your player?";
+                        cin >> array_position;
+                        if (array_position >= 0 || array_position <= 7) {
+                            user_team_array[1] = player_name;
+                            cout << endl;
+                            for (int i = 0; i < 4; i++) {
+                                cout << "[" << user_team_array[i] << "] ";
+                            }
+                            cout << endl;
+                            remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                            cout << "Remaining Salary: " << remaining_salary << endl;
+                            cout << endl;
+                            break;
+                        }
 
-                else {
-                    cout << "Invalid input. Try again" << endl;
+                        else {
+                            cout << "Invalid input. Try again" << endl;
+                        }
+                    }
+                    else {
+                        cout << "Invalid input. Try again" << endl;
+                    }
                 }
                 cout << endl;
                 remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
@@ -151,22 +171,30 @@ void TeamCreator::create_user_team() {
                 cout << endl;
                 cout << "Enter the name of the player: ";
                 cin >> player_name;
-                cout << "what position in array is your player?";
-                cin >> array_position;
-                if (array_position >= 0 || array_position <= 7) {
-                    user_team_array[3] = player_name;
-                    cout << endl;
-                    for (int i = 0; i < 4; i++) {
-                        cout << "[" << user_team_array[i] << "] ";
-                    }
-                    cout << endl;
-                    remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
-                    cout << "Remaining Salary: " << remaining_salary << endl;
-                    cout << endl;
-                }
+                for (int i = 0; i < 8; i++) {
+                    if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                        cout << "what position in array is your player?";
+                        cin >> array_position;
+                        if (array_position >= 0 || array_position <= 7) {
+                            user_team_array[1] = player_name;
+                            cout << endl;
+                            for (int i = 0; i < 4; i++) {
+                                cout << "[" << user_team_array[i] << "] ";
+                            }
+                            cout << endl;
+                            remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                            cout << "Remaining Salary: " << remaining_salary << endl;
+                            cout << endl;
+                            break;
+                        }
 
-                else {
-                    cout << "Invalid input. Try again" << endl;
+                        else {
+                            cout << "Invalid input. Try again" << endl;
+                        }
+                    }
+                    else {
+                        cout << "Invalid input. Try again" << endl;
+                    }
                 }
             }
 
@@ -217,22 +245,30 @@ void TeamCreator::create_user_team() {
                             cout << endl;
                             cout << "Enter the name of the player: ";
                             cin >> player_name;
-                            cout << "what position in array is your player?";
-                            cin >> array_position;
-                            if (array_position >= 0 || array_position <= 7) {
-                                user_team_array[0] = player_name;
-                                cout << endl;
-                                for (int i = 0; i < 4; i++) {
-                                    cout << "[" << user_team_array[i] << "] ";
-                                }
-                                cout << endl;
-                                remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
-                                cout << "Remaining Salary: " << remaining_salary << endl;
-                                cout << endl;
-                            }
+                            for (int i = 0; i < 8; i++) {
+                                if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                                    cout << "what position in array is your player?";
+                                    cin >> array_position;
+                                    if (array_position >= 0 || array_position <= 7) {
+                                        user_team_array[1] = player_name;
+                                        cout << endl;
+                                        for (int i = 0; i < 4; i++) {
+                                            cout << "[" << user_team_array[i] << "] ";
+                                        }
+                                        cout << endl;
+                                        remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                                        cout << "Remaining Salary: " << remaining_salary << endl;
+                                        cout << endl;
+                                        break;
+                                    }
 
-                            else {
-                                cout << "Invalid input. Try again" << endl;
+                                    else {
+                                        cout << "Invalid input. Try again" << endl;
+                                    }
+                                }
+                                else {
+                                    cout << "Invalid input. Try again" << endl;
+                                }
                             }
                         }
 
@@ -241,6 +277,115 @@ void TeamCreator::create_user_team() {
                             cout << endl;
                             cout << "Enter the name of the player: ";
                             cin >> player_name;
+                            for (int i = 0; i < 8; i++) {
+                                if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                                    cout << "what position in array is your player?";
+                                    cin >> array_position;
+                                    if (array_position >= 0 || array_position <= 7) {
+                                        user_team_array[1] = player_name;
+                                        cout << endl;
+                                        for (int i = 0; i < 4; i++) {
+                                            cout << "[" << user_team_array[i] << "] ";
+                                        }
+                                        cout << endl;
+                                        remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                                        cout << "Remaining Salary: " << remaining_salary << endl;
+                                        cout << endl;
+                                        break;
+                                    }
+
+                                    else {
+                                        cout << "Invalid input. Try again" << endl;
+                                    }
+                                }
+                                else {
+                                    cout << "Invalid input. Try again" << endl;
+                                }
+                            }
+                        }
+
+                        else if (player_position == "Defender") {
+                            selectable_players.print_possible_player_selections(player_position);
+                            cout << endl;
+                            cout << "Enter the name of the player: ";
+                            cin >> player_name;
+                            for (int i = 0; i < 8; i++) {
+                                if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                                    cout << "what position in array is your player?";
+                                    cin >> array_position;
+                                    if (array_position >= 0 || array_position <= 7) {
+                                        user_team_array[1] = player_name;
+                                        cout << endl;
+                                        for (int i = 0; i < 4; i++) {
+                                            cout << "[" << user_team_array[i] << "] ";
+                                        }
+                                        cout << endl;
+                                        remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                                        cout << "Remaining Salary: " << remaining_salary << endl;
+                                        cout << endl;
+                                        break;
+                                    }
+
+                                    else {
+                                        cout << "Invalid input. Try again" << endl;
+                                    }
+                                }
+                                else {
+                                    cout << "Invalid input. Try again" << endl;
+                                }
+                            }
+                        }
+
+                        else if (player_position == "GoalKeeper") {
+                            selectable_players.print_possible_player_selections(player_position);
+                            cout << endl;
+                            cout << "Enter the name of the player: ";
+                            cin >> player_name;
+                            for (int i = 0; i < 8; i++) {
+                                if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                                    cout << "what position in array is your player?";
+                                    cin >> array_position;
+                                    if (array_position >= 0 || array_position <= 7) {
+                                        user_team_array[1] = player_name;
+                                        cout << endl;
+                                        for (int i = 0; i < 4; i++) {
+                                            cout << "[" << user_team_array[i] << "] ";
+                                        }
+                                        cout << endl;
+                                        remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                                        cout << "Remaining Salary: " << remaining_salary << endl;
+                                        cout << endl;
+                                        break;
+                                    }
+
+                                    else {
+                                        cout << "Invalid input. Try again" << endl;
+                                    }
+                                }
+                                else {
+                                    cout << "Invalid input. Try again" << endl;
+                                }
+                            }
+                        }
+
+                        else {
+                            cout << "Invalid input. Please try again." << endl;
+                        }
+                    }
+                }
+                else {
+                    break;
+                }
+            }
+
+            else if (input3 == "N") {
+                cout << "Select the position of the player you wish to replace: ";
+                cin >> player_position;
+                if (player_position == "Striker") {
+                    selectable_players.print_possible_player_selections(player_position);
+                    cout << "Enter the name of the player: ";
+                    for (int i = 0; i < 8; i++) {
+                        if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
                             cout << "what position in array is your player?";
                             cin >> array_position;
                             if (array_position >= 0 || array_position <= 7) {
@@ -250,14 +395,17 @@ void TeamCreator::create_user_team() {
                                     cout << "[" << user_team_array[i] << "] ";
                                 }
                                 cout << endl;
+                                // remaining_salary += Something figure it out
                                 remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
                                 cout << "Remaining Salary: " << remaining_salary << endl;
                                 cout << endl;
+                                break;
                             }
                             else {
                                 cout << "Invalid input. Try again" << endl;
                             }
                         }
+<<<<<<< HEAD
                         remaining_salary =  remaining_salary - selectable_players.get_striker_selections()[array_position].get_required_player_salary();
                         cout << remaining_salary;
                         cout << "Remaining Salary: " << remaining_salary << endl;
@@ -279,63 +427,84 @@ void TeamCreator::create_user_team() {
                         cout << "Remaining Salary: " << remaining_salary << endl;
                         cout << endl;
                     }
+=======
+                        else {
+                            cout << "Invalid input. Try again" << endl;
+                        }
+                    }
+                }
+>>>>>>> b8ffef66bd5f873dd1036a1a185efa3c3bb2f93d
 
-                        else if (player_position == "Defender") {
-                            selectable_players.print_possible_player_selections(player_position);
-                            cout << endl;
-                            cout << "Enter the name of the player: ";
-                            cin >> player_name;
+                else if (player_position == "Midfielder") {
+                    selectable_players.print_possible_player_selections(player_position);
+                    cout << "Enter the name of the player: ";
+                    cin >> player_name;
+                    for (int i = 0; i < 8; i++) {
+                        if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
                             cout << "what position in array is your player?";
                             cin >> array_position;
                             if (array_position >= 0 || array_position <= 7) {
-                                user_team_array[2] = player_name;
+                                user_team_array[1] = player_name;
                                 cout << endl;
                                 for (int i = 0; i < 4; i++) {
                                     cout << "[" << user_team_array[i] << "] ";
                                 }
                                 cout << endl;
-                                remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
+                                // remaining_salary += Something figure it out
+                                remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
                                 cout << "Remaining Salary: " << remaining_salary << endl;
                                 cout << endl;
+                                break;
                             }
                             else {
                                 cout << "Invalid input. Try again" << endl;
                             }
                         }
+<<<<<<< HEAD
                         remaining_salary =  remaining_salary - selectable_players.get_defender_selections()[array_position].get_required_player_salary();
                         cout << "Remaining Salary: " << remaining_salary << endl;
                         cout << endl;
                     }
+=======
+                        else {
+                            cout << "Invalid input. Try again" << endl;
+                        }
+                    }
+                }
+>>>>>>> b8ffef66bd5f873dd1036a1a185efa3c3bb2f93d
 
-                        else if (player_position == "GoalKeeper") {
-                            selectable_players.print_possible_player_selections(player_position);
-                            cout << endl;
-                            cout << "Enter the name of the player: ";
-                            cin >> player_name;
+                else if (player_position == "Defender") {
+                    selectable_players.print_possible_player_selections(player_position);
+                    cout << "Enter the name of the player: ";
+                    cin >> player_name;
+                    for (int i = 0; i < 8; i++) {
+                        if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
                             cout << "what position in array is your player?";
                             cin >> array_position;
                             if (array_position >= 0 || array_position <= 7) {
-                                user_team_array[3] = player_name;
+                                user_team_array[1] = player_name;
                                 cout << endl;
                                 for (int i = 0; i < 4; i++) {
                                     cout << "[" << user_team_array[i] << "] ";
                                 }
                                 cout << endl;
-                                remaining_salary =  remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
+                                // remaining_salary += Something figure it out
+                                remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
                                 cout << "Remaining Salary: " << remaining_salary << endl;
                                 cout << endl;
+                                break;
                             }
 
                             else {
                                 cout << "Invalid input. Try again" << endl;
                             }
                         }
-
                         else {
-                            cout << "Invalid input. Please try again." << endl;
+                            cout << "Invalid input. Try again" << endl;
                         }
                     }
                 }
+<<<<<<< HEAD
                 else {
                     break;
                 }
@@ -400,19 +569,39 @@ void TeamCreator::create_user_team() {
                     cout << "Remaining Salary: " << remaining_salary << endl;
                     cout << endl;
                 }
+=======
+>>>>>>> b8ffef66bd5f873dd1036a1a185efa3c3bb2f93d
 
                 else if (player_position == "GoalKeeper") {
                     selectable_players.print_possible_player_selections(player_position);
                     cout << "Enter the name of the player: ";
                     cin >> player_name;
-                    user_team_array[3] = player_name;
-                    for (int i = 0; i < 4; i++) {
-                        cout << user_team_array[i] << endl;
+                    for (int i = 0; i < 8; i++) {
+                        if (player_name == selectable_players.get_midfielder_selections()[i].get_name()) {
+                            cout << "what position in array is your player?";
+                            cin >> array_position;
+                            if (array_position >= 0 || array_position <= 7) {
+                                user_team_array[1] = player_name;
+                                cout << endl;
+                                for (int i = 0; i < 4; i++) {
+                                    cout << "[" << user_team_array[i] << "] ";
+                                }
+                                cout << endl;
+                                // remaining_salary += Something figure it out
+                                remaining_salary =  remaining_salary - selectable_players.get_midfielder_selections()[array_position].get_required_player_salary();
+                                cout << "Remaining Salary: " << remaining_salary << endl;
+                                cout << endl;
+                                break;
+                            }
+
+                            else {
+                                cout << "Invalid input. Try again" << endl;
+                            }
+                        }
+                        else {
+                            cout << "Invalid input. Try again" << endl;
+                        }
                     }
-                    //remaining_salary += current player salary (figure this out)
-                    remaining_salary - selectable_players.get_goalkeeper_selections()[array_position].get_required_player_salary();
-                    cout << "Remaining Salary: " << remaining_salary << endl;
-                    cout << endl;
                 }
             }
         }

@@ -40,10 +40,8 @@ PlayerPool.o: PlayerPool.h PlayerPool.cpp
 PlayerPoolTest: Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o
 	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o PlayerPoolTest.cpp -o PlayerPoolTest.out
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e00598bbf255150d42d70d436c8c819006ea1b98
+
 Team.o: Team.h Team.cpp
 	g++ -c Team.cpp
 
