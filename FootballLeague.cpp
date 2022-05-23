@@ -13,12 +13,12 @@ void FootballLeague::read_in_teams(PlayerPool &available_players){
         football_league_teams[i].set_team_members(available_players.get_striker_selections()[i], available_players.get_midfielder_selections()[i], available_players.get_defender_selections()[i], available_players.get_goalkeeper_selections()[i]);
     }
 
-    football_league_teams[0].set_team_name("Manchester United");
-    football_league_teams[1].set_team_name("Manchester City");
+    football_league_teams[0].set_team_name("Man_United");
+    football_league_teams[1].set_team_name("Man_City");
     football_league_teams[2].set_team_name("Arsenal");
     football_league_teams[3].set_team_name("Liverpool");
-    football_league_teams[4].set_team_name("Aston Villa");
-    football_league_teams[5].set_team_name("West Ham United");
+    football_league_teams[4].set_team_name("Wolves");
+    football_league_teams[5].set_team_name("PSG");
     football_league_teams[6].set_team_name("Tottenham");
     football_league_teams[7].set_team_name("Chelsea");
 }
