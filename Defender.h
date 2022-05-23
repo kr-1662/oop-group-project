@@ -4,21 +4,19 @@
 #include "Player.h"
 #include "Attribute.h"
 
+// Defender is a type of player that inherits from the player class.
+
 class Defender: public Player {
-private:
-    Attribute tackling;
-    Attribute marking;
-public:
-    Defender();
-    Defender(string _name, PhysicalAttributeCollection _physical_attribute_ratings,
-    CommonSkillCollection _common_skill_ratings, float salary, Attribute _tackling, Attribute _marking);
-    void set_tackling(Attribute _tackling);
-    void set_marking(Attribute _marking);
-    Attribute get_tackling();
-    Attribute get_marking();
-    void print_info();
-    float total_player_rating();
-    ~Defender();
+    public:
+        Defender();
+        Defender(string _name, PhysicalAttributeCollection _physical_attribute_ratings,
+        CommonSkillCollection _common_skill_ratings, float salary, Attribute _tackling, Attribute _marking);
+
+        // print defender infromation
+        void print_info() override;
+
+        // return mean player rating
+        float mean_player_rating() override;
 };
 
 #endif

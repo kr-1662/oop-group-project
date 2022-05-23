@@ -15,22 +15,14 @@ CommonSkillCollection _common_skill_ratings, float _salary, Attribute _tackling,
     marking = _marking;
 }
 
-void Defender::set_tackling(Attribute _tackling){tackling = _tackling;}
-
-void Defender::set_marking(Attribute _marking){marking = _marking;}
-
-Attribute Defender::get_tackling(){return tackling;}
-
-Attribute Defender::get_marking(){return marking;}
-
 void Defender::print_info() {
     Player::print_info();
     cout << "Tackling: " << tackling.get_rating() << " ";
     cout << "|| Marking: " << marking.get_rating() << endl;
+    cout << endl;
 }
 
-float Defender::total_player_rating() {
-    return (Player::total_player_rating() + (float(tackling.get_rating()) + float(marking.get_rating()))/2)/2;
+float Defender::mean_player_rating() {
+    return (float(physical_attribute_ratings.total_physical_attribute_rating()) + 
+    float(common_skill_ratings.total_skill_rating()) + float(tackling.get_rating()) + float(marking.get_rating()))/9; // mean defender rating.
 }
-
-Defender::~Defender(){}

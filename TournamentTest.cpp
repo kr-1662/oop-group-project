@@ -18,7 +18,7 @@ int main() {
     premier_league.read_in_teams(selectable_players);
     premier_league.set_user_team_name("Liverpool");
 
-    Tournament premier_tournament(premier_league.get_teams(),premier_league.get_user_team_name());
+    Tournament premier_tournament(premier_league);
     premier_tournament.tournament_sim();
 
     return 0;

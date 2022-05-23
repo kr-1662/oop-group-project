@@ -12,6 +12,32 @@ PlayerPool::PlayerPool(){
     goalkeeper_selections = new Goalkeeper[8]; 
 }
 
+PlayerPool::PlayerPool(PlayerPool &player_pool){
+    striker_selections = new Striker[8];
+    midfielder_selections = new Midfielder[8]; 
+    defender_selections = new Defender[8];
+    goalkeeper_selections = new Goalkeeper[8]; 
+    for (int i = 0; i < 8; i++){
+        striker_selections[i] = player_pool.get_striker_selections()[i];
+        midfielder_selections[i] = player_pool.get_midfielder_selections()[i];
+        defender_selections[i] = player_pool.get_defender_selections()[i];
+        goalkeeper_selections[i] = player_pool.get_goalkeeper_selections()[i];
+    }
+}
+
+void PlayerPool::operator=(PlayerPool player_pool){
+    striker_selections = new Striker[8];
+    midfielder_selections = new Midfielder[8]; 
+    defender_selections = new Defender[8];
+    goalkeeper_selections = new Goalkeeper[8]; 
+    for (int i = 0; i < 8; i++){
+        striker_selections[i] = player_pool.get_striker_selections()[i];
+        midfielder_selections[i] = player_pool.get_midfielder_selections()[i];
+        defender_selections[i] = player_pool.get_defender_selections()[i];
+        goalkeeper_selections[i] = player_pool.get_goalkeeper_selections()[i];
+    }
+}
+
 void PlayerPool::read_in_striker(string filename){
     ifstream S_File(filename);
     
@@ -24,6 +50,9 @@ void PlayerPool::read_in_striker(string filename){
     Attribute passing;
     Attribute dribbling;
     Attribute ball_control;
+    Attribute finishing;
+    Attribute shot_power;
+    Attribute penalty;
 
     PhysicalAttributeCollection physical_skills;
     CommonSkillCollection technical_skills;
@@ -47,9 +76,13 @@ void PlayerPool::read_in_striker(string filename){
         striker_selections[i].set_name(name);
         striker_selections[i].set_required_player_salary(cost);
 
-        striker_selections[i].set_finishing(finishing_rating);
-        striker_selections[i].set_shot_power(shot_power_rating);
-        striker_selections[i].set_penalty(penalty_rating);
+        finishing.set_rating(finishing_rating);
+        shot_power.set_rating(shot_power_rating);
+        penalty.set_rating(penalty_rating);
+
+        striker_selections[i].set_finishing(finishing);
+        striker_selections[i].set_shot_power(shot_power);
+        striker_selections[i].set_penalty(penalty);
 
         speed.set_rating(speed_rating);
         strength.set_rating(strength_rating);
@@ -87,6 +120,8 @@ void PlayerPool::read_in_midfielder(string filename){
     Attribute passing;
     Attribute dribbling;
     Attribute ball_control;
+    Attribute game_vision;
+    Attribute creativity;
 
     PhysicalAttributeCollection physical_skills;
     CommonSkillCollection technical_skills;
@@ -110,8 +145,11 @@ void PlayerPool::read_in_midfielder(string filename){
         midfielder_selections[i].set_name(name);
         midfielder_selections[i].set_required_player_salary(cost);
 
-        midfielder_selections[i].set_game_vision(game_vision_rating);
-        midfielder_selections[i].set_creativity(creativity_rating);
+        game_vision.set_rating(game_vision_rating);
+        creativity.set_rating(creativity_rating);
+        
+        midfielder_selections[i].set_game_vision(game_vision);
+        midfielder_selections[i].set_creativity(creativity);
 
         speed.set_rating(speed_rating);
         strength.set_rating(strength_rating);
@@ -150,6 +188,8 @@ void PlayerPool::read_in_defender(string filename){
     Attribute passing;
     Attribute dribbling;
     Attribute ball_control;
+    Attribute marking;
+    Attribute tackling;
 
     PhysicalAttributeCollection physical_skills;
     CommonSkillCollection technical_skills;
@@ -172,8 +212,11 @@ void PlayerPool::read_in_defender(string filename){
         defender_selections[i].set_name(name);
         defender_selections[i].set_required_player_salary(cost);
 
-        defender_selections[i].set_marking(marking_rating);
-        defender_selections[i].set_tackling(tackling_rating);
+        marking.set_rating(marking_rating);
+        tackling.set_rating(tackling_rating);
+
+        defender_selections[i].set_marking(marking);
+        defender_selections[i].set_tackling(tackling);
 
         speed.set_rating(speed_rating);
         strength.set_rating(strength_rating);
@@ -212,13 +255,16 @@ void PlayerPool::read_in_goalkeeper(string filename){
     Attribute passing;
     Attribute dribbling;
     Attribute ball_control;
+    Attribute diving;
+    Attribute ball_handling;
+    Attribute distributing;
 
     PhysicalAttributeCollection physical_skills;
     CommonSkillCollection technical_skills;
 
     int diving_rating;
     int distributing_rating;
-    int handling_rating;
+    int ball_handling_rating;
     int speed_rating;
     int strength_rating;
     int stamina_rating;
@@ -230,15 +276,19 @@ void PlayerPool::read_in_goalkeeper(string filename){
 
     
     for (int i = 0; i < 8; i++){
-        G_File >> name >> diving_rating >> distributing_rating >> handling_rating >> speed_rating >> strength_rating >> stamina_rating >> agility_rating
+        G_File >> name >> diving_rating >> distributing_rating >> ball_handling_rating >> speed_rating >> strength_rating >> stamina_rating >> agility_rating
         >> ball_control_rating >> passing_rating >> dribbling_rating >> cost;
 
         goalkeeper_selections[i].set_name(name);
         goalkeeper_selections[i].set_required_player_salary(cost);
         
-        goalkeeper_selections[i].set_diving(diving_rating);
-        goalkeeper_selections[i].set_handling(handling_rating);
-        goalkeeper_selections[i].set_distributing(distributing_rating);
+        diving.set_rating(diving_rating);
+        ball_handling.set_rating(ball_handling_rating);
+        distributing.set_rating(distributing_rating);
+
+        goalkeeper_selections[i].set_diving(diving);
+        goalkeeper_selections[i].set_handling(ball_handling);
+        goalkeeper_selections[i].set_distributing(distributing);
 
         speed.set_rating(speed_rating);
         strength.set_rating(strength_rating);
@@ -286,35 +336,75 @@ void PlayerPool::print_possible_player_selections(const string position){
 }
 
 Striker PlayerPool::select_striker(string name){
-    for (int i = 0; i < 8; i++){
-        if (striker_selections[i].get_name() == name){
-            return striker_selections[i];
+    int selection_status = 0; // changes to one when successful
+    Striker selected_striker;
+    while (selection_status == 0){   
+        for (int i = 0; i < 8; i++){
+            if (striker_selections[i].get_name() == name){
+                selection_status = 1;
+                selected_striker = striker_selections[i];
+            }
+        }
+        if (selection_status = 0){
+            cout << "Invalid name. Enter name again: ";
+            cin >> name;
         }
     }
+    return selected_striker;
 }
 
 Midfielder PlayerPool::select_midfielder(string name){
-    for (int i = 0; i < 8; i++){
-        if (midfielder_selections[i].get_name() == name){
-            return midfielder_selections[i];
+    int selection_status = 0; // changes to one when successful
+    Midfielder selected_midfielder;
+    while (selection_status == 0){   
+        for (int i = 0; i < 8; i++){
+            if (midfielder_selections[i].get_name() == name){
+                selection_status = 1;
+                selected_midfielder = midfielder_selections[i];
+            }
         }
-    }    
+        if (selection_status = 0){
+            cout << "Invalid name. Enter name again: ";
+            cin >> name;
+        }
+    } 
+    return selected_midfielder; 
 }
     
 Defender PlayerPool::select_defender(string name){
-    for (int i = 0; i < 8; i++){
-        if (defender_selections[i].get_name() == name){
-            return defender_selections[i];
+    int selection_status = 0; // changes to one when successful
+    Defender selected_defender;
+    while (selection_status == 0){   
+        for (int i = 0; i < 8; i++){
+            if (defender_selections[i].get_name() == name){
+                selection_status = 1;
+                selected_defender = defender_selections[i];
+            }
         }
-    }     
+        if (selection_status = 0){
+            cout << "Invalid name. Enter name again: ";
+            cin >> name;
+        }
+    } 
+    return selected_defender;  
 }
    
 Goalkeeper PlayerPool::select_goalkeeper(string name){
-    for (int i = 0; i < 8; i++){
-        if (goalkeeper_selections[i].get_name() == name){
-            return goalkeeper_selections[i];
+    int selection_status = 0; // changes to one when successful
+    Goalkeeper selected_goalkeeper;
+    while (selection_status == 0){   
+        for (int i = 0; i < 8; i++){
+            if (goalkeeper_selections[i].get_name() == name){
+                selection_status = 1;
+                selected_goalkeeper = goalkeeper_selections[i];
+            }
         }
-    }     
+        if (selection_status = 0){
+            cout << "Invalid name. Enter name again: ";
+            cin >> name;
+        }
+    }
+    return selected_goalkeeper;    
 }
 
 Striker* PlayerPool::get_striker_selections(){return striker_selections;}
@@ -326,8 +416,8 @@ Defender* PlayerPool::get_defender_selections(){return defender_selections;}
 Goalkeeper* PlayerPool::get_goalkeeper_selections(){return goalkeeper_selections;}
 
 PlayerPool::~PlayerPool(){
-    //delete [] striker_selections;
-    //delete [] midfielder_selections;
-    //delete [] defender_selections;
-    //delete [] goalkeeper_selections;
+    delete [] striker_selections;
+    delete [] midfielder_selections;
+    delete [] defender_selections;
+    delete [] goalkeeper_selections;
 }

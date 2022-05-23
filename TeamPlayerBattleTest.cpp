@@ -9,11 +9,13 @@ int main(){
     selectable_players.read_in_striker("Striker.txt");
     selectable_players.read_in_midfielder("Midfielder.txt");
     selectable_players.read_in_defender("Defender.txt");
-    selectable_players.read_in_goalkeeper("GoalKeeper.txt");
+    selectable_players.read_in_goalkeeper("Goalkeeper.txt");
 
     FootballLeague premier_league;
     premier_league.read_in_teams(selectable_players);
 
+    premier_league.get_teams()[0];
+    
     Team team_1 = premier_league.get_teams()[0];
     Team team_2 = premier_league.get_teams()[1];
 

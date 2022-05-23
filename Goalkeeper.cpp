@@ -16,39 +16,16 @@ Goalkeeper::Goalkeeper(string _name, PhysicalAttributeCollection _physical_attri
         handling = _handling;
 }
 
-void Goalkeeper::set_distributing(Attribute _distributing){
-    distributing = _distributing;
-}
-
-void Goalkeeper::set_diving(Attribute _diving){
-    diving = _diving;
-}
-
-void Goalkeeper::set_handling(Attribute _handling){
-    handling = _handling;
-}
-
-Attribute Goalkeeper::get_distributing(){
-    return distributing;
-}
-
-Attribute Goalkeeper::get_diving(){
-    return diving;
-}
-
-Attribute Goalkeeper::get_handling(){
-    return handling;
-}
-
 void Goalkeeper::print_info(){
     Player::print_info();
     cout << "Distributing: " << distributing.get_rating() << " ";
     cout << "|| Diving: " << diving.get_rating() << " ";
     cout << "|| Handling: " << handling.get_rating() << endl;
+    cout << endl;
 }
 
-float Goalkeeper::total_player_rating(){
-    return (Player::total_player_rating() + (float(distributing.get_rating()) + float(diving.get_rating()) + float(handling.get_rating()))/3)/2;
+float Goalkeeper::mean_player_rating(){
+    return (float(physical_attribute_ratings.total_physical_attribute_rating()) + 
+    float(common_skill_ratings.total_skill_rating()) + float(distributing.get_rating()) + 
+    float(diving.get_rating()) + float(handling.get_rating()))/10;  // mean player rating
 }
-
-Goalkeeper::~Goalkeeper(){}

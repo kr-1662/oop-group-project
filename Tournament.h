@@ -9,13 +9,14 @@
 
 using namespace std; 
 
+// Tournament class simulates the entire tournament and prints out user interactive information
+
 class Tournament{
     private: 
-    Team* football_league_teams;
-    string user_team_name;
+    FootballLeague football_league;
 
     public:
-    Tournament(Team* _football_league_teams, string user_team_name);
+    Tournament(FootballLeague football_league);
     void tournament_sim();
 };
 

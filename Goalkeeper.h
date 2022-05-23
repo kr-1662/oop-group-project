@@ -6,25 +6,19 @@
 #include "PhysicalAttributeCollection.h"
 #include <string>
 
-class Goalkeeper: public Player {
-private:
-    Attribute distributing;
-    Attribute diving;
-    Attribute handling;
+// Goalkeeper is a type of player that inherits from the player class.
 
-public:
-    Goalkeeper();
-    Goalkeeper(string _name, PhysicalAttributeCollection _physical_attribute_ratings, 
-    CommonSkillCollection _common_skill_ratings, float _salary, Attribute _distributing, Attribute _driving, Attribute _handling);
-    void set_distributing(Attribute _distributing);
-    void set_diving(Attribute _diving);
-    void set_handling(Attribute _handling);
-    Attribute get_distributing();
-    Attribute get_diving();
-    Attribute get_handling();
-    void print_info();
-    float total_player_rating();
-    ~Goalkeeper();
+class Goalkeeper: public Player {
+    public:
+        Goalkeeper();
+        Goalkeeper(string _name, PhysicalAttributeCollection _physical_attribute_ratings, 
+        CommonSkillCollection _common_skill_ratings, float _salary, Attribute _distributing, Attribute _driving, Attribute _handling);
+  
+        // print goalkeeper info
+        void print_info() override;
+
+        // returns mean goalkeeper rating
+        float mean_player_rating() override;
 };
 
 #endif

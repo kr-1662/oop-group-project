@@ -14,7 +14,8 @@ using namespace std;
     Team* TournamentRound::play_tournament_round(){
         for (int i = 0; i < num_of_matches; i++) {
             football_matches[i].set_teams(teams_in_tournament[fixture_team_indexes[2*i]], teams_in_tournament[fixture_team_indexes[2*i+1]]);
-            football_match_results[i] = football_matches[i].play_football_match();
+            football_matches[i].play_football_match();
+            football_match_results[i] = football_matches[i].get_match_result();
             winning_teams[i] = football_matches[i].get_winning_team();
         }
         return winning_teams;

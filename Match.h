@@ -8,20 +8,35 @@
 
 using namespace std;
 
+// Match class simulates a match between two teams.
+
 class Match {
     private:
-    Team team_one;
-    Team team_two;
-    Team winning_team;
-    MatchResult match_result_info;
+        Team team_one;
+        Team team_two;
+        int team_one_score;
+        int team_two_score;
+        Team winning_team;
+        MatchResult match_result;
 
     public:
-    Match();
-    Match(Team _team_one, Team _team_two);
-    void set_teams(Team _team_one, Team _team_two);
-    MatchResult play_football_match();
-    Team get_winning_team();
-    ~Match();
+        Match();
+        Match(Team _team_one, Team _team_two);
+
+        // set teams
+        void set_teams(Team _team_one, Team _team_two);
+
+        // play match
+        void play_football_match();
+
+        // score increment function
+        void score_increment(bool is_win);
+
+        // get winning team
+        Team get_winning_team();
+
+        // return result info
+        MatchResult get_match_result();
 };
 
 #endif

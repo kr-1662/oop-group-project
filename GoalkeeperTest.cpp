@@ -70,10 +70,14 @@ int main() {
 
     Ben.print_info();
     
-    if (Ben.total_player_rating() < 5.77 || Ben.total_player_rating() > 5.79) {
+    if (Ben.mean_player_rating() < 6.05 || Ben.mean_player_rating() > 6.15) {
         cout << "Error in test: " << test_num << endl;
-        cout << Ben.total_player_rating();
+        cout << Ben.mean_player_rating();
     }
+
+    // end of test 1
+
+    test_num++;
 
     CommonSkillCollection skills_2;
     skills_2.set_ball_control(3);
@@ -99,13 +103,13 @@ int main() {
     Lauren.set_handling(handling_2);
     Lauren.set_required_player_salary(450000);
 
-    Player* opponent_1 = &Lauren;
-
-    if (Ben.player_battle(opponent_1) != 'D') {
+    Lauren.print_info();
+    
+    if (Lauren.mean_player_rating() < 6.05 || Lauren.mean_player_rating() > 6.15){ 
         cout << "Error in test: " << test_num << endl;
     }
 
-    // End of test 1
+    // End of test 2
 
     test_num++;
 
@@ -133,13 +137,13 @@ int main() {
     Keshav.set_handling(handling_3);
     Keshav.set_required_player_salary(450000);
 
-    Player* opponent_3 = &Keshav;
-
-    if (Ben.player_battle(opponent_3) != 'W') {
+    Keshav.print_info();
+    
+    if (Keshav.mean_player_rating() !=4){ 
         cout << "Error in test: " << test_num << endl;
     }
 
-    // End of test 2
+    // End of test 3
     
     test_num++;
 
@@ -167,11 +171,11 @@ int main() {
     Jash.set_handling(handling_4);
     Jash.set_required_player_salary(450000);
 
-    Player* opponent_4 = &Jash;
-
-    if (Ben.player_battle(opponent_4) != 'L') {
+    Jash.print_info();
+    
+    if (Jash.mean_player_rating() < 8.35 || Jash.mean_player_rating() > 8.45){ 
         cout << "Error in test: " << test_num << endl;
-    }    
+    }   
 
     return 0;
 }

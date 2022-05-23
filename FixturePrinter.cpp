@@ -8,6 +8,7 @@ FixturePrinter::FixturePrinter(Team* _football_league_teams, int* _fixture_team_
 football_league_teams(_football_league_teams), fixture_team_indexes(_fixture_team_indexes), num_matches(_num_matches) {}
 
 void FixturePrinter::print() {
+    // print out fixtures in ordered way
     cout << "Fixtures:" << endl;
     for (int i = 0; i < num_matches; i++) {
         cout << football_league_teams[fixture_team_indexes[2*i]].get_team_name();
@@ -17,5 +18,3 @@ void FixturePrinter::print() {
     }
     cout << endl;
 }
-
-FixturePrinter::~FixturePrinter(){};

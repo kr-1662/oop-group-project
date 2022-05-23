@@ -1,10 +1,6 @@
 #include "CommonSkillCollection.h"
 
-CommonSkillCollection::CommonSkillCollection(){
-    /*passing.set_rating(0);
-    ball_control.set_rating(0);
-    dribbling.set_rating(0);*/
-}
+CommonSkillCollection::CommonSkillCollection(){}
 
 CommonSkillCollection::CommonSkillCollection(Attribute _passing, Attribute _ball_control, Attribute _dribbling){
     passing = _passing;
@@ -25,7 +21,5 @@ void CommonSkillCollection::set_ball_control(Attribute _ball_control){ball_contr
 void CommonSkillCollection::set_dribbling(Attribute _dribbling){dribbling = _dribbling;}
 
 int CommonSkillCollection::total_skill_rating(){
-     return passing.get_rating() + ball_control.get_rating() + dribbling.get_rating(); 
+     return passing.get_rating() + ball_control.get_rating() + dribbling.get_rating(); // sum of all three ratings
 }
-
-CommonSkillCollection::~CommonSkillCollection(){}

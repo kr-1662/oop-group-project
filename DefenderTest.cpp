@@ -63,11 +63,17 @@ int main() {
         cout << "Error in test: " << test_num << endl;
     }
 
+    cout << Ben.get_tackling().get_rating() << endl;
+
     Ben.print_info();
     
-    if (Ben.total_player_rating() < 5.02 || Ben.total_player_rating() > 5.04){ 
+    if (Ben.mean_player_rating() < 5.8 || Ben.mean_player_rating() > 5.9){ 
         cout << "Error in test: " << test_num << endl;
     }
+
+    // End of test 1
+
+    test_num++;
 
     CommonSkillCollection skills_2;
     skills_2.set_ball_control(3);
@@ -91,13 +97,13 @@ int main() {
     Lauren.set_tackling(tackling_2);
     Lauren.set_required_player_salary(450000);
 
-    Player* opponent_1 = &Lauren;
-
-    if (Ben.player_battle(opponent_1) != 'D') {
+    Lauren.print_info();
+    
+    if (Lauren.mean_player_rating() < 5.8 || Lauren.mean_player_rating() > 5.9){ 
         cout << "Error in test: " << test_num << endl;
     }
 
-    // End of test 1
+    // End of test 2
 
     test_num++;
 
@@ -123,13 +129,12 @@ int main() {
     Keshav.set_tackling(tackling_3);
     Keshav.set_required_player_salary(450000);
 
-    Player* opponent_3 = &Keshav;
-
-    if (Ben.player_battle(opponent_3) != 'W') {
+    Keshav.print_info();
+    
+    if (Keshav.mean_player_rating() < 4.5 || Keshav.mean_player_rating() > 4.6){ 
         cout << "Error in test: " << test_num << endl;
     }
-
-    // End of test 2
+    // End of test 3
     
     test_num++;
 
@@ -147,6 +152,7 @@ int main() {
     Attribute tackling_4(5);
     Attribute marking_4(2);
 
+    Player* p = new Defender;
     Defender Jash;
     Jash.set_name("Jash");
     Jash.set_common_skill_ratings(skills_4);
@@ -155,11 +161,13 @@ int main() {
     Jash.set_tackling(tackling_4);
     Jash.set_required_player_salary(450000);
 
-    Player* opponent_4 = &Jash;
-
-    if (Ben.player_battle(opponent_4) != 'L') {
+    Jash.print_info();
+    *p = Jash;
+    p->print_info();
+    
+    if (p->mean_player_rating() < 6.7 || p->mean_player_rating() > 6.8){ 
         cout << "Error in test: " << test_num << endl;
-    }    
+    }
 
     return 0;
 }

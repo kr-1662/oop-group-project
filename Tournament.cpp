@@ -8,9 +8,8 @@
 
 using namespace std;
 
-Tournament::Tournament(Team* _football_league_teams, string _user_team_name){
-    football_league_teams = _football_league_teams;
-    user_team_name = _user_team_name;
+Tournament::Tournament(FootballLeague _football_league){
+    football_league = _football_league;
 }
 
 void Tournament::tournament_sim(){
@@ -48,7 +47,7 @@ void Tournament::tournament_sim(){
     }    
         
     // Print out quarterfinal fixtures
-    FixturePrinter quarterfinal_printer(football_league_teams, quarterfinals_fixture_team_indexes, 4);
+    FixturePrinter quarterfinal_printer(football_league.get_teams(), quarterfinals_fixture_team_indexes, 4);
     quarterfinal_printer.print();
 
     // Progress simulation?
@@ -63,7 +62,7 @@ void Tournament::tournament_sim(){
     }   
 
     // Simulate quarterfinals
-    TournamentRound quarterfinals(football_league_teams, user_team_name, quarterfinals_fixture_team_indexes, 4);
+    TournamentRound quarterfinals(football_league.get_teams(), football_league.get_user_team_name(), quarterfinals_fixture_team_indexes, 4);
     Team* semifinalists = quarterfinals.play_tournament_round();
     quarterfinals.print_results();
     cout << endl;
@@ -110,7 +109,7 @@ void Tournament::tournament_sim(){
     }   
 
     // Simulate semi-finals
-    TournamentRound semifinals(semifinalists, user_team_name, semifinals_fixture_team_indexes, 2);
+    TournamentRound semifinals(semifinalists, football_league.get_user_team_name(), semifinals_fixture_team_indexes, 2);
     Team* grandfinalists = semifinals.play_tournament_round();
     semifinals.print_results();
     cout << endl;
@@ -157,7 +156,7 @@ void Tournament::tournament_sim(){
     }
 
     // Simulate grand final
-    TournamentRound grandfinal(grandfinalists, user_team_name, grandfinal_fixture_team_indexes, 1);
+    TournamentRound grandfinal(grandfinalists, football_league.get_user_team_name(), grandfinal_fixture_team_indexes, 1);
     Team* champion = grandfinal.play_tournament_round();
     grandfinal.print_results();
     cout << endl;

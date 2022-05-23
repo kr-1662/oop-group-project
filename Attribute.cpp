@@ -3,9 +3,10 @@
 
 using namespace std;
 
-Attribute::Attribute() : rating(0){}
+Attribute::Attribute() : rating(0){}    // Initialise rating to zero
 
 Attribute::Attribute(int _rating){
+    // Input validation
     if (_rating >= 0 && _rating <= 10) {
         rating = _rating;
     }
@@ -19,6 +20,7 @@ Attribute::Attribute(int _rating){
 int Attribute::get_rating(){return rating;}
 
 void Attribute::set_rating(int _rating){
+    // Input validation
     if (_rating >= 0 && _rating <= 10) {
         rating = _rating;
     }
@@ -28,5 +30,3 @@ void Attribute::set_rating(int _rating){
         rating = 0;
     }
 }
-
-Attribute::~Attribute(){}

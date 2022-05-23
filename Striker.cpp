@@ -16,27 +16,16 @@ Striker::Striker(string _name, PhysicalAttributeCollection _physical_attribute_r
         penalty = _penalty;
 }
 
-void Striker::set_finishing(Attribute _finishing){finishing = _finishing;}
-
-void Striker::set_shot_power(Attribute _shot_power){shot_power = _shot_power;}
-
-void Striker::set_penalty(Attribute _penalty){penalty = _penalty;}
-
-Attribute Striker::get_finishing(){return finishing;}
-
-Attribute Striker::get_shot_power(){return shot_power;}
-
-Attribute Striker::get_penalty(){return penalty;}
-
 void Striker::print_info() {
-    Player::print_info();
+    Player::print_info();   // use print info from parent class
     cout << "Finishing: " << finishing.get_rating() << " ";
     cout << "|| Shot Power: " << shot_power.get_rating() << " ";
     cout << "|| Penalty: " << penalty.get_rating() << endl;
+    cout << endl;
 }
 
-float Striker::total_player_rating() {
-    return (Player::total_player_rating() + (float(finishing.get_rating()) + float(shot_power.get_rating()) + float(penalty.get_rating()))/3)/2;
+float Striker::mean_player_rating() {
+    return (float(physical_attribute_ratings.total_physical_attribute_rating()) + 
+    float(common_skill_ratings.total_skill_rating()) + float(finishing.get_rating()) + 
+    float(shot_power.get_rating()) + float(penalty.get_rating()))/10;       // mean of all 10 associated ratings
 }
-
-Striker::~Striker(){}

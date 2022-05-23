@@ -26,7 +26,5 @@ int MatchResult::get_winners_score(){return winners_score;}
 int MatchResult::get_losers_score(){return losers_score;}
 
 void MatchResult::print_result(){
-    cout << winner_name << " defeated " << loser_name << " " << winners_score << " - " << losers_score << endl;
+    cout << winner_name << " defeated " << loser_name << " " << winners_score << " - " << losers_score << endl; // printed message.
 }
-
-MatchResult::~MatchResult(){}
