@@ -45,11 +45,15 @@ void FootballLeague::read_in_teams(PlayerPool available_players){
 }
 
 
-void FootballLeague::set_user_team_name(string team_name){
+void FootballLeague::set_user_team_name(){
     int selection_status = 0; // changes to one when selection successfull;
+    string user_team_name;
+    cout << "Enter the name of the team you wish to manage: ";
+    cin >> user_team_name;
+    cout << endl;
     while (selection_status == 0){   
         for (int i = 0; i < 8; i++){
-            if (football_league_teams[i].get_team_name() == team_name){
+            if (football_league_teams[i].get_team_name() == user_team_name){
                 user_selected_team_name = football_league_teams[i].get_team_name();
                 user_team_index = i;
                 selection_status = 1;
@@ -57,9 +61,14 @@ void FootballLeague::set_user_team_name(string team_name){
         }
         if (selection_status == 0){
             cout << "Invalid team name. Enter team name again: ";
-            cin >> team_name;
+            cin >> user_team_name;
+            cout << endl;
         }
     }
+}
+
+void FootballLeague::reset_user_team(){
+    football_league_teams[user_team_index].reset_team_members();
 }
 
 string FootballLeague::get_user_team_name(){return user_selected_team_name;}

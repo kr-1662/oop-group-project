@@ -336,76 +336,42 @@ void PlayerPool::print_possible_player_selections(const string position){
 }
 
 Striker PlayerPool::select_striker(string name){
-    int selection_status = 0; // changes to one when successful
-    Striker selected_striker;
-    while (selection_status == 0){   
-        for (int i = 0; i < 8; i++){
-            if (striker_selections[i].get_name() == name){
-                selection_status = 1;
-                selected_striker = striker_selections[i];
-            }
-        }
-        if (selection_status = 0){
-            cout << "Invalid name. Enter name again: ";
-            cin >> name;
+    for (int i = 0; i < 8; i++){
+        if (striker_selections[i].get_name() == name){
+            return striker_selections[i];
         }
     }
-    return selected_striker;
+    return striker_selections[0];
 }
 
-Midfielder PlayerPool::select_midfielder(string name){
-    int selection_status = 0; // changes to one when successful
-    Midfielder selected_midfielder;
-    while (selection_status == 0){   
-        for (int i = 0; i < 8; i++){
-            if (midfielder_selections[i].get_name() == name){
-                selection_status = 1;
-                selected_midfielder = midfielder_selections[i];
-            }
-        }
-        if (selection_status = 0){
-            cout << "Invalid name. Enter name again: ";
-            cin >> name;
-        }
-    } 
-    return selected_midfielder; 
-}
-    
-Defender PlayerPool::select_defender(string name){
-    int selection_status = 0; // changes to one when successful
-    Defender selected_defender;
-    while (selection_status == 0){   
-        for (int i = 0; i < 8; i++){
-            if (defender_selections[i].get_name() == name){
-                selection_status = 1;
-                selected_defender = defender_selections[i];
-            }
-        }
-        if (selection_status = 0){
-            cout << "Invalid name. Enter name again: ";
-            cin >> name;
-        }
-    } 
-    return selected_defender;  
-}
-   
-Goalkeeper PlayerPool::select_goalkeeper(string name){
-    int selection_status = 0; // changes to one when successful
-    Goalkeeper selected_goalkeeper;
-    while (selection_status == 0){   
-        for (int i = 0; i < 8; i++){
-            if (goalkeeper_selections[i].get_name() == name){
-                selection_status = 1;
-                selected_goalkeeper = goalkeeper_selections[i];
-            }
-        }
-        if (selection_status = 0){
-            cout << "Invalid name. Enter name again: ";
-            cin >> name;
+Midfielder PlayerPool::select_midfielder(string name){  
+    for (int i = 0; i < 8; i++){
+        if (midfielder_selections[i].get_name() == name){
+            return midfielder_selections[i];
         }
     }
-    return selected_goalkeeper;    
+    return midfielder_selections[0];
+} 
+
+    
+Defender PlayerPool::select_defender(string name){  
+    for (int i = 0; i < 8; i++){
+        if (defender_selections[i].get_name() == name){
+            return defender_selections[i];
+        }
+    }
+    return defender_selections[0];
+} 
+   
+Goalkeeper PlayerPool::select_goalkeeper(string name){  
+    for (int i = 0; i < 8; i++){
+        if (goalkeeper_selections[i].get_name() == name){
+            return goalkeeper_selections[i];
+        }
+    }
+    return goalkeeper_selections[0];
 }
+
 
 Striker* PlayerPool::get_striker_selections(){return striker_selections;}
 

@@ -17,7 +17,7 @@ int main() {
     premier_league.read_in_teams(selectable_players);
     premier_league.get_team("Arsenal")->print_player_names();    // did segfault on this line
     premier_league.get_teams()[0].get_team_members()[0]->print_info();
-    premier_league.set_user_team_name("Arsenal");
+    premier_league.set_user_team_name();
 
     return 0;
 }

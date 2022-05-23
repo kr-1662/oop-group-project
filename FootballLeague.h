@@ -26,8 +26,11 @@ class FootballLeague {
         void read_in_teams(PlayerPool available_players);
         
         // set/get user team name
-        void set_user_team_name(string team_name);
+        void set_user_team_name();
         string get_user_team_name();
+
+        // clear user team
+        void reset_user_team();
         
         // get user team index in football league teams array.
         int get_user_team_index();
