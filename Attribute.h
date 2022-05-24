@@ -1,7 +1,7 @@
 #ifndef Attribute_h
 #define Attribute_h
 
-// Attribute class represents a player atribute and stores a rating.
+// Attribute class represents a player attribute and stores a rating.
 
 class Attribute {
     private:
