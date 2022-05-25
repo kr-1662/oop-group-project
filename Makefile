@@ -1,9 +1,9 @@
-OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o 
+OBJ = Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o TeamPlayerBattle.o MatchResult.o Match.o FixturePrinter.o TournamentRound.o Tournament.o TeamCreator.o
 
 all: SimGame
 
-SimGame: Attribute.o CommonSkillCollection.o
-	g++ Attribute.o CommonSkillCollection.o -o SimGame
+SimGame: $(OBJ)
+	g++ SimGame.cpp $(OBJ) -o SimGame.out
 
 Attribute.o: Attribute.h Attribute.cpp
 	g++ -c Attribute.cpp
@@ -60,34 +60,34 @@ TeamCreator.o: TeamCreator.h TeamCreator.cpp
 	g++ -c TeamCreator.cpp
 
 AttributeTest: $(OBJ)
-	g++ Attribute.o AttributeTest.cpp -o AttributeTest.out
+	g++ AttributeTest.cpp $(OBJ) -o AttributeTest.out
 
 CommonSkillCollectionTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o CommonSkillCollectionTest.cpp -o CommonSkillCollectionTest.out
+	g++ CommonSkillCollectionTest.cpp $(OBJ) -o CommonSkillCollectionTest.out
 
 PhysicalAttributeCollectionTest: $(OBJ)
-	g++ Attribute.o PhysicalAttributeCollection.o PhysicalAttributeCollectionTest.cpp -o PhysicalAttributeCollectionTest.out
+	g++ PhysicalAttributeCollectionTest.cpp $(OBJ) -o PhysicalAttributeCollectionTest.out
 
 DefenderTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Defender.o DefenderTest.cpp -o DefenderTest.out
+	g++ DefenderTest.cpp $(OBJ) -o DefenderTest.out
 
 GoalkeeperTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Goalkeeper.o GoalkeeperTest.cpp -o GoalkeeperTest.out
+	g++ GoalkeeperTest.cpp $(OBJ) -o GoalkeeperTest.out
 
 MidfielderTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Midfielder.o MidfielderTest.cpp -o MidfielderTest.out
+	g++ MidfielderTest.cpp $(OBJ) -o MidfielderTest.out
 
 StrikerTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o StrikerTest.cpp -o StrikerTest.out
+	g++ StrikerTest.cpp $(OBJ) -o StrikerTest.out
 
 PlayerPoolTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o PlayerPoolTest.cpp -o PlayerPoolTest.out
+	g++ PlayerPoolTest.cpp $(OBJ) -o PlayerPoolTest.out
 
 TeamTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o TeamTest.cpp -o TeamTest.out
+	g++ TeamTest.cpp $(OBJ) -o TeamTest.out
 
 FootballLeagueTest: $(OBJ)
-	g++ Attribute.o CommonSkillCollection.o PhysicalAttributeCollection.o Player.o Striker.o Midfielder.o Defender.o Goalkeeper.o PlayerPool.o Team.o FootballLeague.o FootballLeagueTest.cpp -o FootballLeagueTest.out
+	g++ FootballLeagueTest.cpp $(OBJ) -o FootballLeagueTest.out
 
 TeamPlayerBattleTest: $(OBJ)
 	g++ TeamPlayerBattleTest.cpp $(OBJ) -o TeamPlayerBattleTest.out
@@ -108,13 +108,7 @@ TeamCreatorTest: $(OBJ)
 	g++ TeamCreatorTest.cpp $(OBJ) -o TeamCreatorTest.out
 
 TournamentTest: $(OBJ)
-	g++ TournamentTest.cpp $(OBJ) -o a.out
-
-MainFile: $(OBJ)
-	g++ TournamentTest.cpp TeamCreatorTest.cpp main.cpp $(OBJ) -o a.out
-
-main: $(OBJ)
-	g++ main.cpp $(OBJ) -o main.out
+	g++ TournamentTest.cpp $(OBJ) -o TournamentTest.out
 
 clean:
 	rm -f *.out *.o SimGame
