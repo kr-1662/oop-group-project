@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//default constructor
 PlayerPool::PlayerPool(){
     striker_selections = new Striker[8];
     midfielder_selections = new Midfielder[8]; 
@@ -12,6 +13,7 @@ PlayerPool::PlayerPool(){
     goalkeeper_selections = new Goalkeeper[8]; 
 }
 
+//copy constructor
 PlayerPool::PlayerPool(PlayerPool &player_pool){
     striker_selections = new Striker[8];
     midfielder_selections = new Midfielder[8]; 
@@ -25,6 +27,7 @@ PlayerPool::PlayerPool(PlayerPool &player_pool){
     }
 }
 
+//assignment operator
 void PlayerPool::operator=(PlayerPool player_pool){
     striker_selections = new Striker[8];
     midfielder_selections = new Midfielder[8]; 
@@ -38,6 +41,7 @@ void PlayerPool::operator=(PlayerPool player_pool){
     }
 }
 
+// Reads the attributes of Striker 
 void PlayerPool::read_in_striker(string filename){
     ifstream S_File(filename);
     
@@ -108,6 +112,7 @@ void PlayerPool::read_in_striker(string filename){
     }
 }
 
+// Reads the attributes of Midfielder
 void PlayerPool::read_in_midfielder(string filename){
     ifstream M_File(filename);
     
@@ -176,6 +181,7 @@ void PlayerPool::read_in_midfielder(string filename){
 
 }
 
+// Reads the attributes of Defender
 void PlayerPool::read_in_defender(string filename){
     ifstream D_File(filename);
     
@@ -243,6 +249,7 @@ void PlayerPool::read_in_defender(string filename){
     }
 }
 
+// Reads the attributes of Goalkeeper
 void PlayerPool::read_in_goalkeeper(string filename){
     ifstream G_File(filename);
     
@@ -315,6 +322,7 @@ void PlayerPool::read_in_goalkeeper(string filename){
     }
 }
 
+//prints possible player position for the respective positions
 void PlayerPool::print_possible_player_selections(const string position){
     if (position == "Striker"){
         for (int i = 0; i < 8; i++){
@@ -335,6 +343,7 @@ void PlayerPool::print_possible_player_selections(const string position){
     }
 }
 
+//Selcts a striker from the 8 possible strikers
 Striker PlayerPool::select_striker(string name){
     for (int i = 0; i < 8; i++){
         if (striker_selections[i].get_name() == name){
@@ -344,6 +353,7 @@ Striker PlayerPool::select_striker(string name){
     return striker_selections[0];
 }
 
+//Selcts a Midfielder from the 8 possible Midfielder
 Midfielder PlayerPool::select_midfielder(string name){  
     for (int i = 0; i < 8; i++){
         if (midfielder_selections[i].get_name() == name){
@@ -353,7 +363,7 @@ Midfielder PlayerPool::select_midfielder(string name){
     return midfielder_selections[0];
 } 
 
-    
+//Selcts a Defender from the 8 possible Defender    
 Defender PlayerPool::select_defender(string name){  
     for (int i = 0; i < 8; i++){
         if (defender_selections[i].get_name() == name){
@@ -362,7 +372,8 @@ Defender PlayerPool::select_defender(string name){
     }
     return defender_selections[0];
 } 
-   
+
+//Selcts a Goalkeeper from the 8 possible Goalkeeper    
 Goalkeeper PlayerPool::select_goalkeeper(string name){  
     for (int i = 0; i < 8; i++){
         if (goalkeeper_selections[i].get_name() == name){
@@ -372,15 +383,19 @@ Goalkeeper PlayerPool::select_goalkeeper(string name){
     return goalkeeper_selections[0];
 }
 
-
+//returns name of the selected striker
 Striker* PlayerPool::get_striker_selections(){return striker_selections;}
 
+//returns name of the selected Midfielder
 Midfielder* PlayerPool::get_midfielder_selections(){return midfielder_selections;}
-    
+ 
+//returns name of the selected Defender    
 Defender* PlayerPool::get_defender_selections(){return defender_selections;}
 
+//returns name of the selected Goalkeeper
 Goalkeeper* PlayerPool::get_goalkeeper_selections(){return goalkeeper_selections;}
 
+//destructor
 PlayerPool::~PlayerPool(){
     delete [] striker_selections;
     delete [] midfielder_selections;
