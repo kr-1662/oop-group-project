@@ -20,7 +20,7 @@ Attribute::Attribute(int _rating){
 int Attribute::get_rating(){return rating;}
 
 void Attribute::set_rating(int _rating){
-    // Input validation
+    // Input validation, the rating has to be in the range [0, 10]
     if (_rating >= 0 && _rating <= 10) {
         rating = _rating;
     }

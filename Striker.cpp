@@ -5,6 +5,10 @@ using namespace std;
 
 Striker::Striker(){}
 
+// striker object is created with the following attributes: 
+// name, physical attribute ratings, common skill ratings, 
+// salary, finishing, 
+// shot power, penalty
 Striker::Striker(string _name, PhysicalAttributeCollection _physical_attribute_ratings, 
     CommonSkillCollection _common_skill_ratings, float _salary, Attribute _finishing, Attribute _shot_power, Attribute _penalty){
         name = _name;
@@ -16,6 +20,7 @@ Striker::Striker(string _name, PhysicalAttributeCollection _physical_attribute_r
         penalty = _penalty;
 }
 
+// prints out the attributes of the striker
 void Striker::print_info() {
     Player::print_info();   // use print info from parent class
     cout << "Finishing: " << finishing.get_rating() << " ";
@@ -24,6 +29,7 @@ void Striker::print_info() {
     cout << endl;
 }
 
+// returns average of all attributes for striker
 float Striker::mean_player_rating() {
     return (float(physical_attribute_ratings.total_physical_attribute_rating()) + 
     float(common_skill_ratings.total_skill_rating()) + float(finishing.get_rating()) + 

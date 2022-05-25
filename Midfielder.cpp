@@ -5,6 +5,9 @@ using namespace std;
 
 Midfielder::Midfielder(){}
 
+// midfielder object is created with the following attributes:
+// physical attribute ratings, common skill ratings,
+// game vision, creativity
 Midfielder::Midfielder(string _name, PhysicalAttributeCollection _physical_attribute_ratings, 
     CommonSkillCollection _common_skill_ratings, float _salary, Attribute _game_vision, Attribute _creativity){
         name = _name;
@@ -15,6 +18,7 @@ Midfielder::Midfielder(string _name, PhysicalAttributeCollection _physical_attri
         creativity = _creativity;
 }
 
+// prints out the attributes of the midfielder
 void Midfielder::print_info() {
     Player::print_info();
     cout << "Game Vision: " << game_vision.get_rating() << " ";
@@ -22,6 +26,7 @@ void Midfielder::print_info() {
     cout << endl;
 }
 
+// returns average of all attributes for midfielder
 float Midfielder::mean_player_rating() {
     return (float(physical_attribute_ratings.total_physical_attribute_rating()) + 
     float(common_skill_ratings.total_skill_rating()) + float(game_vision.get_rating()) + float(creativity.get_rating()))/9; // mean midfielder rating

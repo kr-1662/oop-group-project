@@ -44,8 +44,6 @@ class Team {
 
         // function to print player names 
         void print_player_names();
-
-        ~Team();
 };
 
 #endif
