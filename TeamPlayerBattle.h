@@ -13,10 +13,11 @@ using namespace std;
 
 class TeamPlayerBattle {
     private:
-        Team team_1;
-        Team team_2;
+        Team team_1; 
+        Team team_2; 
     
     public:
+        // constructor that takes int team 1 and team 2
         TeamPlayerBattle(Team _team_1, Team _team_2);
         
         // functions to determine the winner in team player matchups
