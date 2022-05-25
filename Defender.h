@@ -8,9 +8,9 @@
 
 class Defender: public Player {
     public:
-        Defender();
+        Defender(); // default constructor
         Defender(string _name, PhysicalAttributeCollection _physical_attribute_ratings,
-        CommonSkillCollection _common_skill_ratings, float salary, Attribute _tackling, Attribute _marking);
+        CommonSkillCollection _common_skill_ratings, float salary, Attribute _tackling, Attribute _marking); // constructor with parameters
 
         // print defender infromation
         void print_info() override;

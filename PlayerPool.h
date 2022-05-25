@@ -23,7 +23,7 @@ class PlayerPool{
         Goalkeeper* goalkeeper_selections;
     
     public:
-        PlayerPool();
+        PlayerPool(); // default constructor
 
         // Copy constructor
         PlayerPool(PlayerPool &player_pool);
@@ -50,7 +50,7 @@ class PlayerPool{
         Defender select_defender(string name);
         Goalkeeper select_goalkeeper(string name);
         
-        ~PlayerPool();
+        ~PlayerPool(); // destructor
 };
 
 #endif

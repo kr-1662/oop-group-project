@@ -10,9 +10,9 @@
 
 class Goalkeeper: public Player {
     public:
-        Goalkeeper();
+        Goalkeeper(); // default constructor
         Goalkeeper(string _name, PhysicalAttributeCollection _physical_attribute_ratings, 
-        CommonSkillCollection _common_skill_ratings, float _salary, Attribute _distributing, Attribute _driving, Attribute _handling);
+        CommonSkillCollection _common_skill_ratings, float _salary, Attribute _distributing, Attribute _driving, Attribute _handling); // constructor with parameters
   
         // print goalkeeper info
         void print_info() override;

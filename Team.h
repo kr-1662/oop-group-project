@@ -20,7 +20,7 @@ class Team {
         Player** team_members;
 
     public:
-        Team();
+        Team(); // default constructor
 
         // copy constructor
         Team(const Team &team);
