@@ -8,10 +8,12 @@
 
 using namespace std;
 
+// constructor that takes in the football league
 Tournament::Tournament(FootballLeague _football_league){
     football_league = _football_league;
 }
 
+// runs the tournament simulation
 void Tournament::tournament_sim(){
     char progression_input = 'N'; // Stores input when user asked to progress simulation.
     

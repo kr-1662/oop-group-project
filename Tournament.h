@@ -13,10 +13,13 @@ using namespace std;
 
 class Tournament{
     private: 
+    // the entire football league would be added to the tournament class
     FootballLeague football_league;
 
     public:
+    // constructor that takes in the football league
     Tournament(FootballLeague football_league);
+    // runs the tournament simulation
     void tournament_sim();
 };
 

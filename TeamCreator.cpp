@@ -4,11 +4,13 @@
 
 using namespace std;
 
+// constructor that takes in a pointer to a PlayerPool and a pointer to a FootballLeague
 TeamCreator::TeamCreator(PlayerPool* _selectable_players, FootballLeague* _football_league) {
     selectable_players = _selectable_players;
     football_league = _football_league;
 }
 
+// intializes the user team
 void TeamCreator::create_user_team() {
     char progression_input = ' ';
     int progression_flag = 0;

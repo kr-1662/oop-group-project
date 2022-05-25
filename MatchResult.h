@@ -9,9 +9,13 @@ using namespace std;
 
 class MatchResult {
     private:
+        // stores the name of the team that won the match
         string winner_name;
+        // stores the name of the team that lost the match
         string loser_name;
+        // stores the score of the team that won the match
         int winners_score;
+        // stores the score of the team that lost the match
         int losers_score;
 
     public:

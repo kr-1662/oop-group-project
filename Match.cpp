@@ -6,15 +6,18 @@
 
 using namespace std;
 
+// sets team one and team two along with default values for the match result
 Match::Match(Team _team_one, Team _team_two) : team_one(_team_one), team_two(_team_two), winning_team(_team_one), team_one_score(0), team_two_score(0) {}
 
 Match::Match() : team_one_score(0), team_two_score(0) {winning_team = team_one;}
 
+// sets teams
 void Match::set_teams(Team _team_one, Team _team_two){
     team_one = _team_one;
     team_two = _team_two;
 }
 
+// increment score of winning team
 void Match::score_increment(bool is_win){
     if (is_win){
         team_one_score++;
@@ -23,6 +26,7 @@ void Match::score_increment(bool is_win){
     }
 }
 
+// runs the match
 void Match::play_football_match(){
     TeamPlayerBattle battle(team_one, team_two);
 
@@ -71,6 +75,8 @@ void Match::play_football_match(){
     }
 }
 
+// returns winning team
 Team Match::get_winning_team(){return winning_team;}
 
+// returns match result
 MatchResult Match::get_match_result(){return match_result;}

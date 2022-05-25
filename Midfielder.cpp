@@ -6,6 +6,7 @@ using namespace std;
 Midfielder::Midfielder(){}
 
 // midfielder object is created with the following attributes:
+// name, salary
 // physical attribute ratings, common skill ratings,
 // game vision, creativity
 Midfielder::Midfielder(string _name, PhysicalAttributeCollection _physical_attribute_ratings, 
