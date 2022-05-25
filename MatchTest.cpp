@@ -23,7 +23,8 @@ int main(){
     Match m1(team_1, team_2);
 
     MatchResult match_result;
-    match_result = m1.play_football_match();
+    m1.play_football_match();
+    match_result = m1.get_match_result();
     match_result.print_result();
     Team winning_team = m1.get_winning_team();
     cout << winning_team.get_team_name() << endl;
